@@ -14,7 +14,7 @@
 <pre><code>    git@github.com:pahsantana/adopt_friend.git
 </code></pre>
 <p class="has-line-data" data-line-start="25" data-line-end="26"><strong>Entre na pasta do repositório que você acabou de clonar:</strong></p>
-<pre><code> cd BD_PI_sl6
+<pre><code> cd adopt_friend
 </code></pre>
 <p class="has-line-data" data-line-start="29" data-line-end="30"><strong>Verifique que você está na branch master</strong></p>
 <pre><code>git branch
