@@ -11,7 +11,7 @@
 </ul>
 <h2 class="code-line" data-line-start=20 data-line-end=21 ><a id="ANTES_DE_COMEAR_A_DESENVOLVER_20"></a>ANTES DE COMEÇAR A DESENVOLVER</h2>
 <p class="has-line-data" data-line-start="21" data-line-end="22"><strong>Clone o repositório</strong></p>
-<pre><code>    git@github.com:geavila/BD_PI_sl6.git
+<pre><code>    git@github.com:pahsantana/adopt_friend.git
 </code></pre>
 <p class="has-line-data" data-line-start="25" data-line-end="26"><strong>Entre na pasta do repositório que você acabou de clonar:</strong></p>
 <pre><code> cd BD_PI_sl6
