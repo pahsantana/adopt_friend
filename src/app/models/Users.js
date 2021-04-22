@@ -1,31 +1,30 @@
-module.exports = (sequelize, DataTypes) => {
-    const User = sequelize.define('Users', {
+// module.exports = (sequelize, DataTypes) => {
+//     const User = sequelize.define('users', {
+//         name: DataTypes.STRING,
+//         cpf: DataTypes.STRING,
+//         email: DataTypes.STRING,
+//         phone: DataTypes.STRING,
+//         password: DataTypes.VIRTUAL,
+//         password_hash: DataTypes.STRING,
+//         id_pet: DataTypes.INTEGER,
+//         id_event: DataTypes.INTEGER,
+//     }, {});
     
-        name: DataTypes.STRING,
-        cpf: DataTypes.STRING,
-        email: DataTypes.STRING,
-        phone: DataTypes.STRING,
-        password: DataTypes.VIRTUAL,
-        password_hash: DataTypes.STRING,
-        id_pet: DataTypes.INTEGER,
-        id_event: DataTypes.INTEGER,
-    }, {});
+//     User.associate = function (models) {
+//       User.hasMany(models.Pets, { foreignKey: 'id_pet'})
+//     };
     
-    User.associate = function (models) {
-      User.hasMany(models.Pets, { foreignKey: 'id_pet'})
-    };
-    
-    User.associate = function (models) {
-      User.hasMany(models.Events, { foreignKey: 'id_event'})
-    };
+//     User.associate = function (models) {
+//       User.hasMany(models.Events, { foreignKey: 'id_event'})
+//     };
 
 
-    return User
-  };
+//     return User
+//   };
 
 
 
-/*import Sequelize, {Model} from 'sequelize';
+import Sequelize, {Model} from 'sequelize';
 import bcrypt from 'bcryptjs';
 
 class User extends Model{
@@ -37,8 +36,8 @@ class User extends Model{
             phone: Sequelize.STRING,
             password: Sequelize.VIRTUAL,
             password_hash: Sequelize.STRING,
-            id_address: Sequelize.INTEGER,
-            id_pet: Sequelize.INTEGER
+            // id_address: Sequelize.INTEGER,
+            // id_pet: Sequelize.INTEGER
         }, {
             sequelize, 
         });
@@ -52,13 +51,13 @@ class User extends Model{
         return this;
     }
 
-    static associate(sequelize) {
-        this.hasMany(sequelize.Models.Pets, { through: 'userroles' });
+    // static associate(sequelize) {
+    //     this.hasMany(sequelize.Models.Pets, { through: 'userroles' });
     
 
     checkPassword(password){
-        return bcrypt.compare(password, this.password_hash);s
+        return bcrypt.compare(password, this.password_hash);
     };
 }
 
-export default User;*/
+export default User
