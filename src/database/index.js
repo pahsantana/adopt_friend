@@ -16,7 +16,7 @@ class Database {
         models.map( model => model.init(this.connection));
 
         User.associate(this.connection.models);
-
+        Pet.associate(this.connection.models)
         Address.associate(this.connection.models);
     }
 }

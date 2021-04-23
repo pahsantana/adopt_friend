@@ -1,38 +1,22 @@
-// module.exports = (sequelize, DataTypes) => {
-//   const Pet = sequelize.define('pets', {
-//     name: DataTypes.STRING,
-//     age: DataTypes.INTEGER,
-//     breed: DataTypes.STRING,
-//     weight: DataTypes.FLOAT,
-//     vaccine: DataTypes.BOOLEAN,
-//     castration: DataTypes.BOOLEAN,
-//     microchip: DataTypes.BOOLEAN,
-//     size: DataTypes.STRING,
-//     id_image: DataTypes.INTEGER,
-//     is_adopted: DataTypes.BOOLEAN,
-//     id_event: DataTypes.INTEGER,
-//   }, {});
-
-//   Pet.associate = function (models) {
-//     Pet.hasMany(models.Events, { foreignKey: 'id_event'})
-//   };
-
-//   return Pet;
-// };
-
 import Sequelize, {Model} from 'sequelize';
 
 class Pet extends Model{
+    static init(sequelize){
+        super.init({
+            name: Sequelize.STRING,
+            age: Sequelize.INTEGER,
+            size: Sequelize.STRING,
+            breed: Sequelize.STRING,
+        },{
+            sequelize,
+        });
 
-  static init(sequelize){
-    super.init({
-      name: Sequelize.STRING,
-      age:  Sequelize.TINYINT,
-      breed: Sequelize.STRING,
-      weight: Sequelize.STRING,
-      size: Sequelize.FLOAT,
-    })
-  }
+        return this;
+    }
+
+    static associate(models){
+        this.belongsTo(models.User, {foreignKey: 'user_id', as: 'user'})
+    }
 }
 
 export default Pet;
