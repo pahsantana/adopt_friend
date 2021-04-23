@@ -2,6 +2,12 @@ import User from '../models/Users';
 
 class UserController {
 
+    async index(req,res){
+        const users = await User.findAll();
+
+        return res.json(users);
+    }
+
     async store(req, res) {
 
         const userExists = await User.findOne({ where: { cpf: req.body.cpf } })
@@ -10,16 +16,14 @@ class UserController {
             return res.status(400).json({ error: `CPF ${req.body.cpf} já está cadastrado` })
         }
         
-        const { id, name, cpf, email, phone, id_pet, id_event } = await User.create(req.body);
+        const { id, name, cpf, email, phone} = await User.create(req.body);
 
         return res.json({
             id,
             name,
             cpf,
             email,
-            phone,
-            id_pet,
-            id_event
+            phone
         })
 
     }
