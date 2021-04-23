@@ -1,44 +1,15 @@
-module.exports = (sequelize, DataTypes) => {
-    const User = sequelize.define('Users', {
-    
-        name: DataTypes.STRING,
-        cpf: DataTypes.STRING,
-        email: DataTypes.STRING,
-        phone: DataTypes.STRING,
-        password: DataTypes.VIRTUAL,
-        password_hash: DataTypes.STRING,
-        id_pet: DataTypes.INTEGER,
-        id_event: DataTypes.INTEGER,
-    }, {});
-    
-    User.associate = function (models) {
-      User.hasMany(models.Pets, { foreignKey: 'id_pet'})
-    };
-    
-    User.associate = function (models) {
-      User.hasMany(models.Events, { foreignKey: 'id_event'})
-    };
-
-
-    return User
-  };
-
-
-
-/*import Sequelize, {Model} from 'sequelize';
+import {DataTypes, Model} from 'sequelize';
 import bcrypt from 'bcryptjs';
 
 class User extends Model{
     static init(sequelize){
         super.init({
-            name: Sequelize.STRING,
-            cpf: Sequelize.STRING,
-            email: Sequelize.STRING,
-            phone: Sequelize.STRING,
-            password: Sequelize.VIRTUAL,
-            password_hash: Sequelize.STRING,
-            id_address: Sequelize.INTEGER,
-            id_pet: Sequelize.INTEGER
+            name: DataTypes.STRING,
+            cpf: DataTypes.STRING,
+            email: DataTypes.STRING,
+            phone: DataTypes.STRING,
+            password: DataTypes.VIRTUAL,
+            password_hash: DataTypes.STRING,
         }, {
             sequelize, 
         });
@@ -52,13 +23,13 @@ class User extends Model{
         return this;
     }
 
-    static associate(sequelize) {
-        this.hasMany(sequelize.Models.Pets, { through: 'userroles' });
-    
+    static associate(models) {
+        this.hasOne(models.Address, { foreignKey: 'user_id', as:'address'});
+    }
 
     checkPassword(password){
-        return bcrypt.compare(password, this.password_hash);s
+        return bcrypt.compare(password, this.password_hash);
     };
 }
 
-export default User;*/
+export default User;

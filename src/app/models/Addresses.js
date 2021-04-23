@@ -1,15 +1,23 @@
-module.exports = (sequelize, DataTypes) => {
-    const Address = sequelize.define('addresses', {
+import {DataTypes, Model} from 'sequelize';
+
+class Address extends Model{
+
+  static init(sequelize){
+    super.init({
       uf: DataTypes.STRING,
       city: DataTypes.STRING,
       logradouro: DataTypes.STRING,
       number: DataTypes.INTEGER,
       complement: DataTypes.STRING,
       cep: DataTypes.STRING,
-      id_user: DataTypes.INTEGER
-    }, {});
-    Address.associate = function (models) {
-      Address.hasMany(models.Users,{foreignKey:'id_user'})
-    };
-    return Address
-  };
+    }, {
+      sequelize,
+    });
+    return this;
+  }
+  static associate(models) {
+    this.belongsTo(models.User, { foreignKey: 'user_id', as:'user'});
+  }
+}
+
+export default Address;
