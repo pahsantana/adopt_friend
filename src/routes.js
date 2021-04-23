@@ -10,4 +10,8 @@ routes.post('/users/:user_id/address',AddressController.store);
 routes.get('/users/:user_id/address',AddressController.index);
 
 
+
+routes.get('/users/:user_id/pets',PetController.index)
+routes.post('/users/:user_id/pets',PetController.store)
+
 export default routes;
