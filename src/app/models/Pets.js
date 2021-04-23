@@ -1,12 +1,12 @@
-import Sequelize, {Model} from 'sequelize';
+import {DataTypes, Model} from 'sequelize';
 
 class Pet extends Model{
     static init(sequelize){
         super.init({
-            name: Sequelize.STRING,
-            age: Sequelize.INTEGER,
-            size: Sequelize.STRING,
-            breed: Sequelize.STRING,
+            name: DataTypes.STRING,
+            age: DataTypes.INTEGER,
+            size: DataTypes.STRING,
+            breed: DataTypes.STRING,
         },{
             sequelize,
         });

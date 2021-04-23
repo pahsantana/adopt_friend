@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import UserController from './app/controllers/UserController';
 import AddressController from './app/controllers/AddressController';
-
+import PetController from './app/controllers/PetController';
 
 const routes = new Router();
 

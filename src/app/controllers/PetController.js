@@ -1,6 +1,5 @@
-import Pet from '../models/Pet';
-import User from '../models/User';
-import User from '../models/User';
+import Pet from '../models/Pets';
+import User from '../models/Users';
 
 class PetController{
 
@@ -8,7 +7,7 @@ class PetController{
         const {user_id} = req.params;
 
         const user = await User.findByPk(user_id, {
-            include: { association: 'pets'}
+            include: { association: 'pet'}
         });
         
         if(!user){
