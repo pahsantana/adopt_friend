@@ -3,7 +3,7 @@ import  databaseConfig  from '../config/database';
 import  User  from '../app/models/Users';
 import Address from '../app/models/Addresses';
 import Pet from '../app/models/Pets';
-
+// import Event from '../app/models/Events'
 
 const models = [User,Address, Pet];
 
@@ -20,6 +20,7 @@ class Database {
         User.associate(this.connection.models);
         Pet.associate(this.connection.models);
         Address.associate(this.connection.models);
+        // Event.associate(this.connection.models);
     }
 }
 

@@ -23,7 +23,6 @@ module.exports = {
       },
       age: {
         type: Sequelize.INTEGER,
-        allowNull: true
       },
       size: {
         type: Sequelize.STRING,
@@ -46,6 +45,7 @@ module.exports = {
       is_adopted: {
         type: Sequelize.BOOLEAN,
         allowNull: false,
+        defaultValue: false,
       },
       created_at: {
         type: Sequelize.DATE,
