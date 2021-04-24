@@ -25,12 +25,9 @@ class User extends Model{
 
     static associate(models) {
         this.hasOne(models.Address, { foreignKey: 'user_id', as:'address'});
-    }
-
-    static associate(models){
         this.hasMany(models.Pet, {foreignKey: 'user_id', as: 'pet'})
+        // this.hasMany(models.Event, {foreignKey: 'user_id', as: 'event'})
     }
-
     checkPassword(password){
         return bcrypt.compare(password, this.password_hash);
     };

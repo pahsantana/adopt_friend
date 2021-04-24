@@ -1,3 +1,5 @@
+import * as Yup from "yup";
+
 import {Op} from 'sequelize'
 import Pet from '../models/Pets';
 import User from '../models/Users';
@@ -17,7 +19,6 @@ class PetController{
 
         return res.json(user)
     }
-
 
     async store(req, res){
 
@@ -142,6 +143,38 @@ class PetController{
         return res.status(200).json(pet);
     }
 
+    async update(req,res){
+
+        const schema = Yup.object().shape({
+            name: Yup.string().required(),
+            age: Yup.number(),
+            size: Yup.string(),
+            breed: Yup.string(),
+            weight: Yup.number(),
+            vaccine: Yup.boolean(),
+            castration: Yup.boolean(),
+            microchip: Yup.boolean(),
+        });
+
+        if (!(await schema.isValid(req.body))) {
+            return res.status(400).json({ error: 'Falha ao validar.' });
+        }
+
+        const pet = await Pet.findByPk(req.params.id);
+
+        const { name, age, size, breed, weight, vaccine, castration, microchip } = await pet.update(req.body);
+
+        return res.json({
+            name,
+            age,
+            size,
+            breed,
+            weight,
+            vaccine,
+            castration,
+            microchip
+        });
+    }
 
     async delete(req, res) {
         try {
@@ -155,6 +188,4 @@ class PetController{
         }
     }
 }
-
-
 export default new PetController();
