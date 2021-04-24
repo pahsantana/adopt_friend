@@ -4,38 +4,54 @@ module.exports = {
   up: async (queryInterface, Sequelize) => {
 
     return queryInterface.createTable('pets', {
-      id:{
+      id: {
         type: Sequelize.INTEGER,
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
       },
-      user_id:{
+      user_id: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        references: {model: 'User', key: 'id'},
+        references: { model: 'users', key: 'id' },
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
       },
-      name:{
+      name: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      age:{
+      age: {
         type: Sequelize.INTEGER,
         allowNull: true
       },
-      size:{
+      size: {
         type: Sequelize.STRING,
       },
-      breed:{
+      breed: {
         type: Sequelize.STRING
       },
-      created_at:{
+      weight: {
+        type: Sequelize.FLOAT,
+      },
+      vaccine: {
+        type: Sequelize.BOOLEAN,
+      },
+      castration: {
+        type: Sequelize.BOOLEAN,
+      },
+      microchip: {
+        type: Sequelize.BOOLEAN,
+      },
+      is_adopted: {
+        type: Sequelize.BOOLEAN,
+        allowNull: false,
+      },
+      created_at: {
         type: Sequelize.DATE,
         allowNull: false,
       },
-      updated_at:{
+      updated_at: {
         type: Sequelize.DATE,
         allowNull: false,
       }
@@ -43,5 +59,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
+    return queryInterface.dropTable('pets');
   }
 };
