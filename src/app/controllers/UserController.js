@@ -156,7 +156,7 @@ class UserController {
         return res.status(200).json(user);
     }
 
-    async findUserByCpf(req, res) {
+    async findUserByCpf  (req, res) {
         const user = await User.findOne({
             where: { cpf: req.body.cpf },
         });
@@ -167,7 +167,6 @@ class UserController {
 
         return res.status(200).json(user);
     }
-}
 
 
 export default new UserController();
