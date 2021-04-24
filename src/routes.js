@@ -2,19 +2,23 @@ import { Router } from 'express';
 
 import UserController from './app/controllers/UserController';
 import AddressController from './app/controllers/AddressController';
+import SessionController from './app/controllers/SessionController';
 import PetController from './app/controllers/PetController';
 import EventController from './app/controllers/EventController';
 
+import authMiddleware from './app/middlewares/auth';
+
 const routes = new Router();
 
-routes.get('/users/:user_id/pets',PetController.index)
-routes.post('/users/:user_id/pets',PetController.store)
-routes.post('/users/:user_id/address',AddressController.store);
-routes.get('/users/:user_id/address',AddressController.index);
 routes.post('/users', UserController.store);
+routes.post('/users/:user_id/address',AddressController.store);
+routes.post('/session', SessionController.store);
+routes.use(authMiddleware);
+routes.get('/users/:user_id/address',AddressController.index);
+routes.get('/users/:user_id/address',AddressController.delete);
+routes.post('/users/:user_id/pets',PetController.store);
+routes.get('/users/:user_id/pets',PetController.index);
 routes.put('/users/:id', UserController.update);
-
-
 
 
 routes.get('/pets/is_adopted', PetController.findPetByAdopt);
