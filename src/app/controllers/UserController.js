@@ -136,37 +136,54 @@ class UserController {
 
     }
 
-}
+    // Passível de implementação - talvez desnecssário
 
-    async findAllUsers(req, res) {
 
-        const users = await User.findAll({ where: null });
-        if (users.length < 1)
-            return res.json({ message: "Nenhum usuário foi cadastrado." });
-        return res.json(users);
-    }
+    // async findAllUsers(req, res) {
 
-    async findUserById(req, res) {
-        const user = await User.findOne({ where: { id: req.params.id } });
+    //     const users = await User.findAll({ where: null });
+    //     if (users.length < 1)
+    //         return res.json({ message: "Nenhum usuário foi cadastrado." });
+    //     return res.json(users);
+    // }
 
-        if (!user) {
-            return res.status(400).json({ error: "Usuário não encontrado!" });
-        }
+    // async findUserById(req, res) {
+    //     const user = await User.findOne({ where: { id: req.params.id } });
 
-        return res.status(200).json(user);
-    }
+    //     if (!user) {
+    //         return res.status(400).json({ error: "Usuário não encontrado!" });
+    //     }
 
+<<<<<<< HEAD
     async findUserByCpf  (req, res) {
         const user = await User.findOne({
             where: { cpf: req.body.cpf },
         });
+=======
+    //     return res.status(200).json(user);
+    // }
+>>>>>>> 1ddddafba24fc8d6b1869764876323bf39344346
 
-        if (!user) {
-            return res.status(400).json({ error: "Usuário não encontrado!" });
-        }
+    // async findUserByCpf(req, res) {
+    //     const user = await User.findOne({
+    //         where: { cpf: req.body.cpf },
+    //     });
 
+<<<<<<< HEAD
         return res.status(200).json(user);
     }
+=======
+    //     if (!user) {
+    //         return res.status(400).json({ error: "Usuário não encontrado!" });
+    //     }
+
+    //     return res.status(200).json(user);
+    // }
+}
+>>>>>>> 1ddddafba24fc8d6b1869764876323bf39344346
+
+    
+
 
 
 export default new UserController();

@@ -48,6 +48,19 @@ class AddressController {
         return res.status(200).json(user);
     }
 
+    async delete(req, res) {
+        try {
+          
+          const address = await address.findByPk(req.params.id);
+    
+          await address.destroy();
+    
+          return res.status(200).json({message: `Endereço ${req.params.id} foi deletado`});
+        } catch (err) {
+          return res.status(400).json({ error: err.message });
+        }
+    }
+
 }
 
 export default new AddressController();
