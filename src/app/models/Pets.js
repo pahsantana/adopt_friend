@@ -1,12 +1,17 @@
-import Sequelize, {Model} from 'sequelize';
+import {DataTypes, Model} from 'sequelize';
 
 class Pet extends Model{
     static init(sequelize){
         super.init({
-            name: Sequelize.STRING,
-            age: Sequelize.INTEGER,
-            size: Sequelize.STRING,
-            breed: Sequelize.STRING,
+            name: DataTypes.STRING,
+            age: DataTypes.INTEGER,
+            size: DataTypes.STRING,
+            breed: DataTypes.STRING,
+            weight: DataTypes.FLOAT,
+            vaccine: DataTypes.BOOLEAN,
+            castration: DataTypes.BOOLEAN,
+            microchip: DataTypes.BOOLEAN,
+            is_adopted: DataTypes.BOOLEAN,
         },{
             sequelize,
         });
@@ -14,9 +19,9 @@ class Pet extends Model{
         return this;
     }
 
-    static associate(models){
-        this.belongsTo(models.User, {foreignKey: 'user_id', as: 'user'})
-    }
+    static associate(models) {
+        this.belongsTo(models.User, { foreignKey: 'user_id', as:'user'});
+      }
 }
 
 export default Pet;
