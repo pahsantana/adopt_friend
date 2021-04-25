@@ -7,13 +7,23 @@ class AddressController {
 
         const {user_id} = req.params;
 
-        const user = await User.findByPk(user_id, {
+        let {name, email,address} = await User.findByPk(user_id, {
 
-            include: { association: 'address'}
+            include:[ { association: 'address'}]
 
         });
 
-        return res.status(200).json(user);
+        const {uf, city, logradouro, number, complement, cep} = address;
+        
+        return res.status(200).json({
+            name,
+            email,
+            uf, 
+            city,
+            logradouro,
+            number,
+            complement,
+            cep});
     }
 
     async store(req, res) {

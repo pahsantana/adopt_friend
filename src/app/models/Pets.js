@@ -10,8 +10,7 @@ class Pet extends Model{
             weight: DataTypes.FLOAT,
             vaccine: DataTypes.BOOLEAN,
             castration: DataTypes.BOOLEAN,
-            microchip: DataTypes.BOOLEAN,
-            is_adopted: DataTypes.BOOLEAN,
+            microchip: DataTypes.BOOLEAN
         },{
             sequelize,
         });

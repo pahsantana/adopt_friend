@@ -4,55 +4,31 @@ import User from '../models/Users';
 class UserController {
 
     async index(req, res) {
-        const users = await User.findAll();
+        const users = await User.findOne({where:{id: req.params.id}});
 
-        return res.json(users);
+        return res.json({
+            Name: users.name,
+            cpf: users.cpf,
+            email: users.email,
+            phone: users.phone
+        });
     }
 
     async store(req, res) {
 
-        if (!req.body.name) {
-            return res.status(400).json({
-                ERROR: "Nome é obrigatório",
-                request: {
-                    name: "Nome"
-                }
-            });
-        }
+        const schema = Yup.object().shape({
+            name: Yup.string().required(),
+            cpf: Yup.string().required().length(11),
+            email: Yup.string().email().required(),
+            phone: Yup.string().required(),
+            password: Yup.string().min(6).required(),
+            confirmPassword: Yup.string().when('password',(password, field)=>
+                password ? field.required().oneOf([Yup.ref('password')]) : field
+            ),
+        });
 
-        if (!req.body.cpf) {
-            return res.status(400).json({
-                ERROR: "CPF é obrigatório",
-                request: {
-                    cpf: "CPF podendo utilizar caracteres especiais XXX.XXX.XXX-XX"
-                }
-            });
-        }
-
-        if (!req.body.email) {
-            return res.status(400).json({
-                ERROR: "E-mail é obrigatório",
-                request: {
-                    email: "email@email.com"
-                }
-            });
-        }
-
-        if (!req.body.phone) {
-            return res.status(400).json({
-                ERROR: "Telefone é obrigatório",
-                request: {
-                    phone: "eu telefone (XXX)XXXXX-XXXX"
-                }
-            });
-        }
-        if (!req.body.password) {
-            return res.status(400).json({
-                ERROR: "A senha é obrigatória",
-                request: {
-                    password: "senha"
-                }
-            });
+        if (!(await schema.isValid(req.body))) {
+            return res.status(400).json({ error: 'Cadastro inválido, verifique os item obrigatórios' });
         }
 
         const userExists = await User.findOne({ where: { cpf: req.body.cpf } })
@@ -135,7 +111,8 @@ class UserController {
           }
 
     }
-
+}
+    export default new UserController();
     // Passível de implementação - talvez desnecssário
 
 
@@ -154,36 +131,28 @@ class UserController {
     //         return res.status(400).json({ error: "Usuário não encontrado!" });
     //     }
 
-<<<<<<< HEAD
-    async findUserByCpf  (req, res) {
-        const user = await User.findOne({
-            where: { cpf: req.body.cpf },
-        });
-=======
+    // async findUserByCpf  (req, res) {
+    //     const user = await User.findOne({
+    //         where: { cpf: req.body.cpf },
+    //     });
     //     return res.status(200).json(user);
     // }
->>>>>>> 1ddddafba24fc8d6b1869764876323bf39344346
 
     // async findUserByCpf(req, res) {
     //     const user = await User.findOne({
     //         where: { cpf: req.body.cpf },
     //     });
 
-<<<<<<< HEAD
-        return res.status(200).json(user);
-    }
-=======
+        // return res.status(200).json(user);
+    // }
     //     if (!user) {
     //         return res.status(400).json({ error: "Usuário não encontrado!" });
     //     }
 
     //     return res.status(200).json(user);
     // }
-}
->>>>>>> 1ddddafba24fc8d6b1869764876323bf39344346
 
     
 
 
 
-export default new UserController();

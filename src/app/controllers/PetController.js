@@ -23,7 +23,7 @@ class PetController{
     async store(req, res){
 
         const {user_id} = req.params;
-        const {name, age, size, breed, weight, vaccine, castration, microchip, is_adopted} = req.body;
+        const {name, age, size, breed, weight, vaccine, castration, microchip} = req.body;
 
         const user = await User.findByPk(user_id);
 
@@ -40,11 +40,18 @@ class PetController{
              vaccine,
              castration,
              microchip,
-             is_adopted,
              user_id
          })
 
-        return res.json(pet);
+        return res.json({
+            name,
+            age,
+            size,
+            breed,
+            weight,
+            vaccine,
+            castration,
+            microchip,});
     };
 
     async findAllPets(req, res) {
@@ -179,7 +186,7 @@ class PetController{
     async delete(req, res) {
         try {
           const pet = await Pet.findByPk(req.params.id);
-    
+
           await pet.destroy();
     
           return res.status(200).json({message: `Pet ${req.params.id} foi deletado`});
