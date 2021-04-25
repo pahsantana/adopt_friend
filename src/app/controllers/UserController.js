@@ -154,25 +154,14 @@ class UserController {
     //         return res.status(400).json({ error: "Usuário não encontrado!" });
     //     }
 
-<<<<<<< HEAD
-    async findUserByCpf  (req, res) {
-        const user = await User.findOne({
-            where: { cpf: req.body.cpf },
-        });
-=======
     //     return res.status(200).json(user);
     // }
->>>>>>> 1ddddafba24fc8d6b1869764876323bf39344346
 
     // async findUserByCpf(req, res) {
     //     const user = await User.findOne({
     //         where: { cpf: req.body.cpf },
     //     });
 
-<<<<<<< HEAD
-        return res.status(200).json(user);
-    }
-=======
     //     if (!user) {
     //         return res.status(400).json({ error: "Usuário não encontrado!" });
     //     }
@@ -180,7 +169,6 @@ class UserController {
     //     return res.status(200).json(user);
     // }
 }
->>>>>>> 1ddddafba24fc8d6b1869764876323bf39344346
 
     
 
