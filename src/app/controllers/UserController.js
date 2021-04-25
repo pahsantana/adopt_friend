@@ -1,57 +1,34 @@
+import * as Yup from "yup";
 import User from '../models/Users';
 
 class UserController {
 
     async index(req, res) {
-        const users = await User.findAll();
+        const users = await User.findOne({where:{id: req.params.id}});
 
-        return res.json(users);
+        return res.json({
+            Name: users.name,
+            cpf: users.cpf,
+            email: users.email,
+            phone: users.phone
+        });
     }
 
     async store(req, res) {
 
-        if (!req.body.name) {
-            return res.status(400).json({
-                ERROR: "Nome é obrigatório",
-                request: {
-                    name: "Nome"
-                }
-            });
-        }
+        const schema = Yup.object().shape({
+            name: Yup.string().required(),
+            cpf: Yup.string().required().length(11),
+            email: Yup.string().email().required(),
+            phone: Yup.string().required(),
+            password: Yup.string().min(6).required(),
+            confirmPassword: Yup.string().when('password',(password, field)=>
+                password ? field.required().oneOf([Yup.ref('password')]) : field
+            ),
+        });
 
-        if (!req.body.cpf) {
-            return res.status(400).json({
-                ERROR: "CPF é obrigatório",
-                request: {
-                    cpf: "CPF podendo utilizar caracteres especiais XXX.XXX.XXX-XX"
-                }
-            });
-        }
-
-        if (!req.body.email) {
-            return res.status(400).json({
-                ERROR: "E-mail é obrigatório",
-                request: {
-                    email: "email@email.com"
-                }
-            });
-        }
-
-        if (!req.body.phone) {
-            return res.status(400).json({
-                ERROR: "Telefone é obrigatório",
-                request: {
-                    phone: "eu telefone (XXX)XXXXX-XXXX"
-                }
-            });
-        }
-        if (!req.body.password) {
-            return res.status(400).json({
-                ERROR: "A senha é obrigatória",
-                request: {
-                    password: "senha"
-                }
-            });
+        if (!(await schema.isValid(req.body))) {
+            return res.status(400).json({ error: 'Cadastro inválido, verifique os item obrigatórios' });
         }
 
         const userExists = await User.findOne({ where: { cpf: req.body.cpf } })
@@ -75,56 +52,102 @@ class UserController {
 
     }
 
-    async findAllUsers(req, res) {
+    async update(req,res){
 
-        const users = await User.findAll({ where: null });
-        if (users.length < 1)
-            return res.json({ message: "Nenhum usuário foi cadastrado." });
-        return res.json(users);
-    }
-
-    async findUserById(req, res) {
-        const user = await User.findOne({ where: { id: req.params.id } });
-
-        if (!user) {
-            return res.status(400).json({ error: "Usuário não encontrado!" });
-        }
-
-        return res.status(200).json(user);
-    }
-
-    async findUserByCpf(req, res) {
-        const user = await User.findOne({
-            where: { cpf: req.body.cpf },
+        const schema = Yup.object().shape({
+            name: Yup.string(),
+            email: Yup.string().email(),
+            oldPassword:Yup.string().min(6),
+            password: Yup.string().min(6).when('oldPassword',(oldPassword,field)=>
+                oldPassword ? field.required() : field
+            ),
+            confirmPassword: Yup.string().when('password',(password, field)=>
+                password ? field.required().oneOf([Yup.ref('password')]) : field
+            ),
         });
 
-        if (!user) {
-            return res.status(400).json({ error: "Usuário não encontrado!" });
+        if (!(await schema.isValid(req.body))) {
+            return res.status(400).json({ error: 'Falha ao validar.' });
         }
 
-        return res.status(200).json(user);
+        const {email,oldPassword} = req.body;
+
+        const user = await User.findByPk(req.params.id);
+
+        if(email && email != user.email){
+            const userExists = await User.findOne({ where: {email}});
+
+            if(userExists){
+                return res.status(400).json({error: 'Usuário já existe'})
+            }
+        }
+
+        if(oldPassword && !(await user.checkPassword(oldPassword))){
+            return res.status(401).json({error: "Senha não corresponde"});
+        }
+
+        const { id, name,cpf,phone } = await user.update(req.body);
+
+        return res.json({
+            id,
+            name,
+            cpf,
+            email,
+            phone
+        });
+    }
+
+
+    async delete(req, res){
+
+        try {
+            const user = await User.findByPk(req.params.id);
+      
+            await user.destroy();
+      
+            return res.status(200).json({message: `Usuario ${req.params.id} foi deletado`});
+          } catch (err) {
+            return res.status(400).json({ error: err.message });
+          }
+
     }
 }
-//   exports.delete = (req, res) => {
-//     const id = req.params.id;
+    export default new UserController();
+    // Passível de implementação - talvez desnecssário
 
-//     Tutorial.destroy({where: {id : id}})
-//     .then(num => {
-//       if (num == 1) {
-//         res.send({
-//           message: "Tutorial apagado com sucesso"
-//         });
-//       } else {
-//         res.send({
-//           message: `Não foi possível apagar o tutorial de id: ${id}, tutorial não encontrado ou body vazio`
-//         });
-//       }
-//     })
-//     .catch(err => {
-//       res.status(500).send({
-//         message: `Erro interno ao apagar o tutorial de id: ${id}`
-//       })
-//     })
-//   }
 
-export default new UserController();
+    // async findAllUsers(req, res) {
+
+    //     const users = await User.findAll({ where: null });
+    //     if (users.length < 1)
+    //         return res.json({ message: "Nenhum usuário foi cadastrado." });
+    //     return res.json(users);
+    // }
+
+    // async findUserById(req, res) {
+    //     const user = await User.findOne({ where: { id: req.params.id } });
+
+    //     if (!user) {
+    //         return res.status(400).json({ error: "Usuário não encontrado!" });
+    //     }
+
+    //     return res.status(200).json(user);
+    // }
+
+    // async findUserByCpf(req, res) {
+    //     const user = await User.findOne({
+    //         where: { cpf: req.body.cpf },
+    //     });
+
+    //     if (!user) {
+    //         return res.status(400).json({ error: "Usuário não encontrado!" });
+    //     }
+
+    //     return res.status(200).json(user);
+    // }
+
+
+    
+
+
+

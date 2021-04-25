@@ -7,13 +7,31 @@ class AddressController {
 
         const {user_id} = req.params;
 
-        const user = await User.findByPk(user_id, {
+        let {name, email,address} = await User.findByPk(user_id, {
 
             include: { association: 'address'}
+                 
+        });
+     
 
+        return response.json({
+            id,
+            name,
+            email,
+            provider,
         });
 
-        return res.status(200).json(user);
+        const {uf, city, logradouro, number, complement, cep} = address;
+        
+        return res.status(200).json({
+            name,
+            email,
+            uf, 
+            city,
+            logradouro,
+            number,
+            complement,
+            cep});
     }
 
     async store(req, res) {
@@ -46,6 +64,19 @@ class AddressController {
         });
 
         return res.status(200).json(user);
+    }
+
+    async delete(req, res) {
+        try {
+          
+          const address = await address.findByPk(req.params.id);
+    
+          await address.destroy();
+    
+          return res.status(200).json({message: `Endereço ${req.params.id} foi deletado`});
+        } catch (err) {
+          return res.status(400).json({ error: err.message });
+        }
     }
 
 }

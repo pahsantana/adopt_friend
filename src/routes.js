@@ -1,19 +1,56 @@
 import { Router } from 'express';
 
+import multer from 'multer';
+import multerConfig from './config/multer';
+
 import UserController from './app/controllers/UserController';
 import AddressController from './app/controllers/AddressController';
+import SessionController from './app/controllers/SessionController';
 import PetController from './app/controllers/PetController';
+import FileController from './app/controllers/FileController';
+//import EventController from './app/controllers/EventController';
+
+import authMiddleware from './app/middlewares/auth';
+const upload = multer(multerConfig);
 
 const routes = new Router();
 
 routes.get('/users/:user_id/pets',PetController.index)
 routes.post('/users/:user_id/pets',PetController.store)
 routes.post('/users/:user_id/address',AddressController.store);
+routes.post('/session', SessionController.store);
+routes.use(authMiddleware);
+
 routes.get('/users/:user_id/address',AddressController.index);
+<<<<<<< HEAD
 routes.post('/users', UserController.store);
+=======
+routes.get('/users/:user_id/address',AddressController.delete);
+routes.post('/users/:user_id/pets',PetController.store);
+routes.get('/users/:user_id/pets',PetController.index);
+routes.get('/users/:id', UserController.index);
+routes.put('/users/:id', UserController.update);
 
+>>>>>>> bbbdbd01e42e62ed4f89e41ef734c49d5dc7bdaf
 
+routes.get('/pets/is_adopted', PetController.findPetByAdopt);
+routes.get('/pets/vaccined', PetController.findPetByVaccine);
+routes.get('/pets/microchiped', PetController.findPetByMicrochip);
+routes.get('/pets/castrated', PetController.findPetByCastration);
+routes.get('/pets/size', PetController.findPetBySize);
+routes.get('/pets/breed', PetController.findPetBreed);
+routes.get('/pets/:id', PetController.findPetById);
+routes.get('/pets', PetController.findAllPets);
+routes.delete('/pets/:id', PetController.delete);
+routes.put('/pets/:id', PetController.update);
 
+routes.post('/files', upload.single('file'), (request, response) => {
+    return response.json(request.file);
+});
+// routes.post('/event/:user_id', EventController.store);
+// routes.get('/event/:user_id', EventController.index);
+
+<<<<<<< HEAD
 
 routes.get('/pets/is_adopted', PetController.findPetByAdopt);
 routes.get('/pets/vaccined', PetController.findPetByVaccine);
@@ -26,5 +63,7 @@ routes.get('/pets', PetController.findAllPets);
 routes.delete('/pets/:id', PetController.delete);
 
 
+=======
+>>>>>>> bbbdbd01e42e62ed4f89e41ef734c49d5dc7bdaf
 
 export default routes;
