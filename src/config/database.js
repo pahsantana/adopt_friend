@@ -1,12 +1,12 @@
-module.exports ={
-    dialect: 'mysql',
-    host:'localhost',
+module.exports = {
+    dialect:'mysql',
+    host: 'localhost',
     username: 'root',
-    password:'Alcelina27@',
-    database: 'db_adopt_friend',
+    password: 'sua_senha',
+    database : 'seu_db',
     define: {
-        timestamps: true,
-        underscored: true,
-        underscoreAll: true
+        timestamp: true, 
+        underscored: true, 
+        underscoredAll: true,
     },
 };
