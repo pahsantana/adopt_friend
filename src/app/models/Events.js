@@ -1,13 +1,21 @@
-module.exports = (sequelize, DataTypes) => {
-    const Event = sequelize.define('events', {
 
+import {DataTypes, Model} from 'sequelize';
+
+class Event extends Model{
+
+  static init(sequelize){
+    super.init({
         is_adopted: DataTypes.BOOLEAN,
+    }, {
+      sequelize,
+    });
+    return this;
+  }
+ /* static associate(models) {
+    this.belongsTo(models.User, { foreignKey: 'user_id', as:'user_event'});
+    this.belongsTo(models.Pet, { foreignKey: 'pet_id', as:'pet_event'});
+  }
+  */
+}
 
-        createdAt:DataTypes.DATE,
-
-        updatedAt: DataTypes.DATE
-    })
-
-    return Event;
-};
-
+export default Event;
