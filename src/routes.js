@@ -18,6 +18,7 @@ routes.get('/users/:user_id/address',AddressController.index);
 routes.get('/users/:user_id/address',AddressController.delete);
 routes.post('/users/:user_id/pets',PetController.store);
 routes.get('/users/:user_id/pets',PetController.index);
+routes.get('/users/:id', UserController.index);
 routes.put('/users/:id', UserController.update);
 
 
