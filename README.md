@@ -21,7 +21,7 @@ Todos estagiários na empresa Avanade do programa decola Dev 2021.</p>
 <h2 class="code-line" data-line-start=6 data-line-end=7 ><a id="Descrio_do_projeto_6"></a>Descrição do projeto:</h2>
 <p class="has-line-data" data-line-start="8" data-line-end="9">Plataforma que conecta animais em situações de rua com familias disposta a adotá-los. Adotar uma animal é um gesto de amor. Atuamos com o objetivo de promover a conexão de animais em situações de vulnerabilidade a protetores e sociedade, criando projetos, estruturas, mecanismos e ferramentas que auxiliem o trabalho voltado para a causa animal.</p>
 <p class="has-line-data" data-line-start="12" data-line-end="13">
-------------------------------------------------------------------------
+
 <strong>Tecnologias Usadas:</strong></p>
 <ul>
 <li class="has-line-data" data-line-start="15" data-line-end="16">Git - Github</li>
