@@ -5,7 +5,7 @@ class Event extends Model{
 
   static init(sequelize){
     super.init({
-        is_adopted: DataTypes.BOOLEAN,
+      is_adopted: DataTypes.BOOLEAN,
     }, {
       sequelize,
     });
@@ -13,7 +13,7 @@ class Event extends Model{
   }
  /* static associate(models) {
     this.belongsTo(models.User, { foreignKey: 'user_id', as:'user_event'});
-    this.belongsTo(models.Pet, { foreignKey: 'pet_id', as:'pet_event'});
+    this.hasOne(models.Pet, { foreignKey: 'pet_id', as:'pet_event'});
   }
   */
 }

@@ -13,14 +13,6 @@ class AddressController {
                  
         });
      
-
-        return response.json({
-            id,
-            name,
-            email,
-            provider,
-        });
-
         const {uf, city, logradouro, number, complement, cep} = address;
         
         return res.status(200).json({
@@ -31,7 +23,8 @@ class AddressController {
             logradouro,
             number,
             complement,
-            cep});
+            cep
+        });
     }
 
     async store(req, res) {
@@ -55,21 +48,25 @@ class AddressController {
 
     async update(req,res){
 
-        const {user_id} = req.params;
+        const address = await Address.findByPk(req.params.id);
 
-        const user = await User.findByPk(user_id, {
+        const {uf, city, logradouro, number, complement, cep} = await address.update(req.body);
 
-            include: { association: 'address'}
-
+        res.status(200).json({
+            uf, 
+            city, 
+            logradouro, 
+            number, 
+            complement, 
+            cep
         });
 
-        return res.status(200).json(user);
     }
 
     async delete(req, res) {
         try {
           
-          const address = await address.findByPk(req.params.id);
+          const address = await Address.findByPk(req.params.id);
     
           await address.destroy();
     
