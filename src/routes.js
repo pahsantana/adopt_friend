@@ -1,7 +1,8 @@
 import { Router } from 'express';
 
 import multer from 'multer';
-import multerConfig from './config/multer';
+import multerConfig_user from './config/multer_user';
+import multerConfig_pet from './config/multer_pet';
 
 import UserController from './app/controllers/UserController';
 import AddressController from './app/controllers/AddressController';
@@ -11,24 +12,30 @@ import FileController from './app/controllers/FileController';
 //import EventController from './app/controllers/EventController';
 
 import authMiddleware from './app/middlewares/auth';
-const upload = multer(multerConfig);
+const upload_user = multer(multerConfig_user);
+const upload_pet = multer(multerConfig_pet);
 
 const routes = new Router();
 
-routes.get('/users/:user_id/pets',PetController.index)
-routes.post('/users/:user_id/pets',PetController.store)
+
+routes.post('/users', UserController.store);
+routes.post('/files/user', upload_user.single('file'), FileController.store);
+// routes.post('/files/:user_id', upload_user.single('file'), FileController.store);
 routes.post('/users/:user_id/address',AddressController.store);
 routes.post('/session', SessionController.store);
 routes.use(authMiddleware);
-
-routes.get('/users/:user_id/address',AddressController.index);
-routes.get('/users/:user_id/address',AddressController.delete);
-routes.post('/users/:user_id/pets',PetController.store);
-routes.get('/users/:user_id/pets',PetController.index);
 routes.get('/users/:id', UserController.index);
 routes.put('/users/:id', UserController.update);
+routes.delete('/users/:id', UserController.delete);
 
+routes.get('/users/:user_id/address',AddressController.index);
+routes.put('/address/:id',AddressController.update);
+routes.delete('/address/:id',AddressController.delete);
 
+routes.post('/users/:user_id/pets',PetController.store);
+// routes.post('/files/:pet_id', upload_pet.single('file'), FileController.store);
+routes.post('/files/pet', upload_pet.single('file'), FileController.store);
+routes.get('/users/:user_id/pets',PetController.index);
 routes.get('/pets/is_adopted', PetController.findPetByAdopt);
 routes.get('/pets/vaccined', PetController.findPetByVaccine);
 routes.get('/pets/microchiped', PetController.findPetByMicrochip);
@@ -40,9 +47,6 @@ routes.get('/pets', PetController.findAllPets);
 routes.delete('/pets/:id', PetController.delete);
 routes.put('/pets/:id', PetController.update);
 
-routes.post('/files', upload.single('file'), (request, response) => {
-    return response.json(request.file);
-});
 // routes.post('/event/:user_id', EventController.store);
 // routes.get('/event/:user_id', EventController.index);
 

@@ -51,7 +51,8 @@ class PetController{
             weight,
             vaccine,
             castration,
-            microchip,});
+            microchip,
+        });
     };
 
     async findAllPets(req, res) {
