@@ -52,6 +52,16 @@ Todos estagiários na empresa Avanade do programa decola Dev 2021.</p>
 <p class="has-line-data" data-line-start="29" data-line-end="30"><strong>Para instalar todas as dependências necessárias para o projeto rodar</strong></p>
 <pre><code>npm install
 </code></pre>
+<p class="has-line-data" data-line-start="29" data-line-end="30"><strong>Crie um Banco de Dados no MySql</strong></p>
+<pre><code>CREATE DATABASE nome_banco;
+</code></pre>
+<p class="has-line-data" data-line-start="29" data-line-end="30"><strong>Agora crie as tabelas no banco de dados, rode esse comando no seu terminal
+</strong></p>
+<pre><code> npx sequelize-cli db:migrate
+</code></pre>
+<p class="has-line-data" data-line-start="29" data-line-end="30"><strong>Não se esqueça de logar na sessão</strong></p>
+<pre><code>npm start
+</code></pre>
 <p class="has-line-data" data-line-start="29" data-line-end="30"><strong>Verifique que você está na branch master</strong></p>
 <pre><code>git branch
 </code></pre>
@@ -92,10 +102,10 @@ Aqui ficam disponibilizadas todas nossas rotas devidamente testadas no Insonmia
 | Listar Usuário | http://localhost:8080/users/:id |
 | Deletar Usuário |http://localhost:8080/:id|
 | ------------------------| ----------------------------------|
-| ROTA:| SESSION |
+|<strong>ROTA:</strong>  | <strong>SESSION </strong>  |
 | Login | http://localhost:8080/session |
 | ------------------------| ----------------------------------|
-| ROTA: | PET  |
+|<strong>ROTA:</strong>  | <strong>PET </strong>  |
 | Criar Pet | http://localhost:8080/users/:user_id/pets |
 | Listar todos os Pets | http://localhost:8080/pets |
 | Listar Pet por ID | http://localhost:8080/pets/:id|
@@ -109,8 +119,55 @@ Aqui ficam disponibilizadas todas nossas rotas devidamente testadas no Insonmia
 | Listar Pet Disponivel para Doação | http://localhost:8080/pets/is_adopted |
 |Listar User Relacionado ao Pet| http://localhost:8080/users/:user_id/pets |
 | ------------------------| ----------------------------------|
-| ROTA: | ADDRESS |
+|<strong>ROTA:</strong>  | <strong>ADDRESS </strong>  |
 | Criar Endereço | http://localhost:8080/users/:user_id/address  |
 | Atualizar Endereço | http://localhost:8080/address/:id |
 | Listar Endereço por User|http://localhost:8080/users/:user_id/address|
 | Deletar Endereço| http://localhost:8080/users/address/:id |
+
+
+
+<h2 class="code-line" data-line-start=44 data-line-end=45 ><a id=""></a>Entrada Esperada No Insonmia
+<p class="has-line-data" data-line-start="45" data-line-end="46"><strong></strong></p>
+
+
+#### 
+
+- Criar/Atualizar - Pet
+
+    ```json
+    {
+    "name" : "nome_pet",
+    "age" : 1,
+    "size" : "porte_pet",
+    "breed" : "raça",
+    "weight" : 1.0,
+    "vaccine" : true,
+    "castration" : true,
+    "microchip" : true
+    }
+    ```
+	
+	
+- Criar/Atualizar - Usuário
+
+    ```json
+    {
+    "name": "Nome Usuário",
+    "cpf": "99999999999",
+    "email": "email@exemplo.com",
+    "phone": "97087-9999",
+    "password": "sua_senha",
+    "confirmPassword": "sua_senha"
+    ```
+
+- Login Sessão
+
+    ```json
+    {
+    	"email": "email@exemplo.com",
+    	"password": "sua_senha"
+    }
+    ```
+
+
