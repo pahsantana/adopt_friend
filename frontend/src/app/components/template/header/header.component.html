@@ -1,0 +1,28 @@
+<header>
+    <div class="container">
+        <a class="logo">
+            <img src="assets/img/logo.png" alt="Logo Adopt Friend - descrição: Cachorro e gato num lar amoroso">
+        </a>
+        <nav>
+            <ul>
+                <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                    <mat-icon>menu</mat-icon>
+                  </button>
+                  <mat-menu #menu="matMenu">
+                    <button mat-menu-item>
+                      <mat-icon>account_circle</mat-icon>
+                      <span>Meu Cadastro</span>
+                    </button>
+                    <button mat-menu-item>
+                      <mat-icon>pets</mat-icon>
+                      <span>Cadastrar um Pet</span>
+                    </button>
+                    <button mat-menu-item>
+                      <mat-icon>favorite</mat-icon>
+                      <span>Adotar um Pet</span>
+                    </button>
+                  </mat-menu>
+            </ul>
+        </nav>
+    </div>
+</header>
