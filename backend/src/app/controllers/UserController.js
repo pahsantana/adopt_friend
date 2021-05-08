@@ -1,5 +1,6 @@
 import * as Yup from "yup";
 import User from '../models/Users';
+import UserId, { userId } from '../middlewares/auth'
 
 class UserController {
 
@@ -105,7 +106,7 @@ class UserController {
       
             await user.destroy();
       
-            return res.status(200).json({message: `Usuario ${req.params.id} foi deletado`});
+            return res.status(200).json({message: `Usuario ${userId} foi deletado`});
           } catch (err) {
             return res.status(400).json({ error: err.message });
           }
