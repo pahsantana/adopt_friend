@@ -5,7 +5,6 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TesteComponentComponent } from './teste-component/teste-component.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { HeaderComponent } from './components/template/header/header.component';
 import { FooterComponent } from './components/template/footer/footer.component';
@@ -16,12 +15,15 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 import { CardComponent } from './components/template/card/card.component';
 import { SearchPetsPageComponent } from './components/search-pets-page/search-pets-page.component';
 
-import {MatCardModule} from '@angular/material/card';
-import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
-import {MatMenuModule} from '@angular/material/menu';
+import { MatMenuModule } from '@angular/material/menu';
+import { NgbdCarouselBasic } from './components/template/carousel-basic/carousel-basic.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 
 export const rotas: Routes = [
@@ -34,11 +36,10 @@ export const rotas: Routes = [
 
 const components = [
   AppComponent,
-  TesteComponentComponent,
   NotFoundComponent,
   FooterComponent,
   HeaderComponent,
-  SearchPetComponent  
+  SearchPetComponent
 ]
 
 @NgModule({
@@ -48,7 +49,7 @@ const components = [
     HomePageComponent,
     CardComponent,
     SearchPetsPageComponent,
-
+    NgbdCarouselBasic
   ],
   imports: [
     BrowserModule,
@@ -58,13 +59,14 @@ const components = [
     MatIconModule,
     MatToolbarModule,
     MatCardModule,
-    MatMenuModule
+    MatMenuModule,
+    NgbModule
   ],
   exports: [
     RouterModule,
     MatButtonModule,
     MatIconModule,
-    MatToolbarModule
+    MatToolbarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
