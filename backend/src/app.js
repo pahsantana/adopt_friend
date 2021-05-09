@@ -1,7 +1,13 @@
 import express from 'express';
+import cors from 'cors'
 import routes from './routes';
 
 import './database';
+
+
+var corsOptions = {
+    origin: "http://localhost:8081"
+};
 
 class App {
 
@@ -12,7 +18,9 @@ class App {
     };
 
     middlewares(){
+        this.server.use(cors(corsOptions));
         this.server.use(express.json());
+        this.server.use(express.urlencoded({extended:true}));
     };
 
     routes(){

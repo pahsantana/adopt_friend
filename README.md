@@ -159,6 +159,7 @@ Aqui ficam disponibilizadas todas nossas rotas devidamente testadas no Insonmia
     "phone": "97087-9999",
     "password": "sua_senha",
     "confirmPassword": "sua_senha"
+    }
     ```
 
 - Login Sessão
