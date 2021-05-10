@@ -22,10 +22,13 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { NgbdCarouselBasic } from './components/template/carousel-basic/carousel-basic.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { CadastrosComponent } from './components/cadastros/cadastros.component';
 import { DataFormComponent } from './data-form/data-form.component';
-import { QuemSomosComponent } from './quem-somos/quem-somos.component';
+import { QuemSomosComponent } from './components/quem-somos/quem-somos.component';
 
 export const rotas: Routes = [
 
@@ -56,7 +59,7 @@ const components = [
     SearchPetsPageComponent,
     NgbdCarouselBasic,
     CadastrosComponent,
-    DataFormComponent
+    DataFormComponent,
     QuemSomosComponent
   ],
   imports: [
@@ -68,7 +71,10 @@ const components = [
     MatToolbarModule,
     MatCardModule,
     MatMenuModule,
-    NgbModule
+    NgbModule,
+    FormsModule,
+    HttpClientModule,
+    MatSnackBarModule
   ],
   exports: [
     RouterModule,

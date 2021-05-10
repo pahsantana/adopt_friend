@@ -1,3 +1,4 @@
+<app-header></app-header>
 <main>
         <section class="cadastro">
                     <h1> Cadastrar um pet</h1>
@@ -7,47 +8,47 @@
                      <h1> Dados do Usuário </h1> 
          </section>
                  
-<form>
-  <div class="contato">
-    <div class="form-group">
-        <label for="nome"></label>
-        <input type="text"  id="nome"placeholder="Digite seu nome completo/Nome Social" size="70" maxlength="50"required>
-    </div>
-
-    <div class="form-group">   
-      <label for="cpf"></label>
-      <input type="text"  name="cpf" id="cpf" placeholder="Digite aqui o seu cpf" size="70" required>
-    </div>
-
-    <div class="form-group">  
-        <label for="endereço"></label>
-        <input type="text"  id="endereço" name="endereço" placeholder="Ex.: Rua: ... Bairro: " size="70" maxlength="200" required>
-    </div>
-    
-    
-    <div class="form-group">  
-      <input type="cidade"  name="cidade" placeholder="Digite sua cidade" class="cidade" >
-      <input type="uf"  name="uf" placeholder="UF" class="">
-    </div>
-      
-      
-        <div class="form-group">
-          <label for="telefone"></label>
-          <input type="tel"  name="telefone" id="telefone" placeholder="Telefone" size="70" required>
+  <form>
+    <div class="contato">
+      <div class="form-group">
+          <label for="nome"></label>
+          <input type="text" [(ngModel)]="cadastros.name"  id="nome" name="name" placeholder="Digite seu nome completo/Nome Social" size="70" maxlength="50"required>
       </div>
-  
+
+      <div class="form-group">   
+        <label for="cpf"></label>
+        <input type="text" [(ngModel)]="cadastros.cpf" name="cpf" id="cpf" placeholder="Digite aqui o seu cpf" size="70" required>
+      </div>
+
+      <!-- <div class="form-group">  
+          <label for="endereço"></label>
+          <input type="text"  id="endereço" name="endereco" placeholder="Ex.: Rua: ... Bairro: " size="70" maxlength="200" required>
+      </div> -->
+      
+      <!-- <div class="form-group">  
+        <input type="cidade"  name="cidade" placeholder="Digite sua cidade" class="cidade" >
+        <input type="uf"  name="uf" placeholder="UF" class="">
+      </div> -->
+
       <div class="form-group">   
         <label for="email"></label>
-        <input type="email"  name="email" id="email" placeholder="email@email.com" size="70" required>
+        <input type="email"  [(ngModel)]="cadastros.email" name="email" id="email" placeholder="email@email.com" size="70" required>
       </div>
-  
-      <div class="form-group">  
-        <input type="password"  name="senha" placeholder="Digite aqui a sua senha" class="senha" >
-        <input type="password"  name="confirma-senha" placeholder="Digite sua senha novamente" class="">
+        
+        <div class="form-group">
+            <label for="telefone"></label>
+            <input type="tel"  [(ngModel)]="cadastros.phone" name="phone" id="telefone" placeholder="Telefone" size="70" required>
+        </div>
+
+        <div class="form-group">  
+          <input type="password" [(ngModel)]="cadastros.password" name="password" placeholder="Digite aqui a sua senha" class="senha" >
+        </div>
+        <div class="form-group">  
+          <input type="password" [(ngModel)]="cadastros.confirmPassword" name="confirmPassword" placeholder="Digite sua senha novamente">
+        </div>
+        <button type="submit" (click)="createCadastro()">Adote já!</button>
       </div>
-    </div>
-</form>
- 
+  </form>
 
 </main>
 

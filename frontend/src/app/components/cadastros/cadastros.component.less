@@ -9,9 +9,22 @@ main {
 
 h1 {
     text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: auto;
+    padding-top: 20px;
 }
+
+.cadastro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    p{
+        width: 79%;
+    }
+}
+
+
 
 .contato {
     background-color:rgba(192,192,192,0.3);
@@ -19,7 +32,26 @@ h1 {
     width: 1000px;
     max-width: 100%;
     margin: 0 auto;
-    border-style: solid;  
+    border-style: solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    button {
+        margin: 10px 0;
+        background-color: var(--text-primary-color);
+        border: 1px solid;
+        border-radius: 8px;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        transition-duration: 0.4s;
+        font-size: 16px;
+        display: block;
+        margin-top: 40px;
+        font-weight: 700;
+      }
   
 }
 
@@ -45,10 +77,13 @@ h1 {
     border-style: solid; 
   }
   
-form label {
+form{
+    padding-bottom: 40px;
+    label {
   
-    margin: 5px 0 5px;
-
+        margin: 5px 0 5px;
+    
+    }
 }
 
 input {

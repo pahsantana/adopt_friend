@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { CadastrosService } from './cadastros.service';
+import { Cadastros } from './cadastros.model';
 
 
 @Component({
@@ -8,9 +11,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CadastrosComponent implements OnInit {
 
-  constructor() { }
+  constructor(private cadastrosService: CadastrosService, private router:Router) { }
+
+  cadastros: Cadastros = {
+    name: '',
+    cpf:'',
+    email:'',
+    phone:'',
+    password:'',
+    confirmPassword:''
+  }
 
   ngOnInit(): void {
+
+
+  }
+
+  createCadastro(): void {
+    this.cadastrosService.create(this.cadastros).subscribe(() => {
+      this.router.navigate(['/'])
+    })
   }
 
 }
