@@ -23,7 +23,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { NgbdCarouselBasic } from './components/template/carousel-basic/carousel-basic.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { QuemSomosComponent } from './quem-somos/quem-somos.component';
+import { QuemSomosComponent } from './components/quem-somos/quem-somos.component';
 
 
 
