@@ -1,110 +1,72 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
-
-
 header {
-    width: 100%;
-    height: 15vh;
-    background-color: white;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    display: inline-grid;
-    align-items: center;
-}
+  width: 100%;
+  height: 15vh;
+  background-color: white;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  display: inline-grid;
+  align-items: center;
+  position: relative;
+  z-index: 1;
 
-header .container {
+  .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 92px;
     margin: 0 30px;
-}
 
-header nav ul {
-    list-style: none;
-}
+    .logo {
+      img {
+        width: 20vw;
+        height: 15vh;
+        margin-top: 5px;
+      }
+    }
 
-header nav ul li {
-    display: inline-block;
-    padding: 10px;
-}
-
-header nav ul li a {
-    text-decoration: none;
-    font-family: 'IBM Plex Sans', sans-serif;
-    color: var(--text-primary-color);
-    font-weight: 700;
-    font-size: 20px;
-}
-
-header .container .logo img {
-    width: 20vw;
-    height: 15vh;
-    margin-top: 5px;
-}
-
-header nav ul .fa fa-bars {
-    font-size: 30px;
-}
-
-header nav ul .fa-bars:hover {
-    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.24);
-}
-
-// Button
-
-section {
-  display: table;
-}
-
-.example-label {
-  display: table-cell;
-  font-size: 14px;
-  margin-left: 8px;
-  min-width: 120px;
-}
-
-.example-button-row {
-  display: table-cell;
-  width: 490px;
-}
-
-.example-button-row .mat-button-base {
-  margin: 8px 8px 8px 0;
-}
-
-.example-flex-container {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.example-button-container {
-  display: flex;
-  justify-content: center;
-  width: 120px;
-}
-
-//button
-
-button{
-  background-color: transparent;
-  border: none;
-}
-
-  .mat-icon{
-    color:black;
-    font-size: 40px;
-    margin-right: 20px;
-    cursor: pointer;
-  }
-
-  .mat-icon:hover{
-    color: #536DFE;
-    transition: 0.5s;
-    font-size: 40px;
-    margin-right: 20px;
-    cursor: pointer;
-    transform: translateX(-3.5px);
-  }
-
+    nav ul {
+      list-style: none;
   
+      li {
+        display: inline-block;
+        padding: 10px;
+  
+        a {
+          text-decoration: none;
+          font-family: 'IBM Plex Sans', sans-serif;
+          color: var(--text-primary-color);
+          font-weight: 700;
+          font-size: 20px;
+        }
+      }
+  
+      .fa fa-bars {
+        font-size: 30px;
+      }
+  
+      .fa-bars:hover {
+        box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.24);
+      }
+      button {
+        background-color: transparent;
+        border: none;
+      }
+
+    }
+  }
+}
+
+.mat-icon {
+  color: black;
+  font-size: 40px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.mat-icon:hover {
+  color: #536DFE;
+  transition: 0.5s;
+  font-size: 40px;
+  margin-right: 20px;
+  cursor: pointer;
+  transform: translateX(-3.5px);
+}
