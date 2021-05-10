@@ -1,44 +1,61 @@
-img{
-  height: 30vh;
-}
+
 .example-card {
-    max-width: 400px;
-    border: 1px solid black;
-    border-radius: 30px;
-    background-color:#B2DFEE;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .button-ver-mais{
-    background-color: #380070;
-    color: white;
-    padding: 6px 17px;
-    border: none;
-    border-radius: 2px;
-  }
+  max-width: 350px;
+  border: 1px solid black;
+  border-radius: 30px;
+  background-color: #B2DFEE;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24);  
+  mat-card-content {
+    .pet-description {
+      margin-top: 10px;
+      height: 80px;
+      width: 280px;
+      background-color: lightgrey;
+      border: 2px solid black;
+      border-radius: 15px;
+      display: flex;
+      flex-direction: column;
 
-  .pet-description {
-    margin-top: 10px;
-    height: 80px;
-    width: 280px;
-    background-color: lightgrey;
-    border: 2px solid black;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
+      ul {
+        list-style: none;
+        margin: 5px 0;
+        padding: 0 5px;
+      }
+      
+      p {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
+  }
+  
+  mat-card-actions{
+    .button-ver-mais {
+      background-color: #380070;
+      color: white;
+      padding: 6px 17px;
+      border: 1px solid black;
+      border-radius: 2px;
+    }
+
+    button:hover{
+    
+        box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.24), 0 7px 20px 0 rgba(0, 0, 0, 0.19);
+        transition-duration: 0.4s;
+      }
+      
+      button:active{
+        box-shadow: none;
+        transition-duration: 0.4s;
+    }
+  }
+  img {
+    height: 30vh;
+  }
 }
-  .pet-description ul{
-    list-style: none;
-    margin: 5px 0;
-    padding: 0 5px;
-  }
 
-.pet-description p {
-
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
