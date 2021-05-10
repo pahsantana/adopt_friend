@@ -29,6 +29,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { CadastrosComponent } from './components/cadastros/cadastros.component';
 import { DataFormComponent } from './data-form/data-form.component';
 import { QuemSomosComponent } from './components/quem-somos/quem-somos.component';
+import { TermoResponsabilidadeComponent } from './components/termo-responsabilidade/termo-responsabilidade.component';
+
 
 export const rotas: Routes = [
 
@@ -37,6 +39,7 @@ export const rotas: Routes = [
   { path: 'pets', component: SearchPetsPageComponent },
   { path: 'cadastros', component: CadastrosComponent },
   { path: 'quem-somos', component: QuemSomosComponent },
+  { path: 'termo-responsabilidade', component: TermoResponsabilidadeComponent },
   { path: '**', component: NotFoundComponent },
 ]
 
@@ -60,7 +63,8 @@ const components = [
     NgbdCarouselBasic,
     CadastrosComponent,
     DataFormComponent,
-    QuemSomosComponent
+    QuemSomosComponent,
+    TermoResponsabilidadeComponent
   ],
   imports: [
     BrowserModule,
