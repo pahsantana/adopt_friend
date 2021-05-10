@@ -1,12 +1,12 @@
 <app-header></app-header>
 <main>
-        <section class="cadastro">
+      
                     <h1> Cadastrar um pet</h1>
                     <p>Para cadastrar um pet, precisamos saber um pouco mais de você, pois do ponto de vista do animal, ser abandonado pelo amigo é muito doloroso, e eles já sofreram isso uma vez e não queremos que isso se repita. Eles não merecem ser tratados com desprezo.
                         Sendo assim, abaixo, clique no botão de Cadastro. Ele deverá ser totalmente preenchido e o nome do cão de interesse citado. Após análise, entraremos em contato com você.
                      </p>
                      <h1> Dados do Usuário </h1> 
-         </section>
+        
                  
   <form>
     <div class="contato">
@@ -20,21 +20,10 @@
         <input type="text" [(ngModel)]="cadastros.cpf" name="cpf" id="cpf" placeholder="Digite aqui o seu cpf" size="70" required>
       </div>
 
-      <!-- <div class="form-group">  
-          <label for="endereço"></label>
-          <input type="text"  id="endereço" name="endereco" placeholder="Ex.: Rua: ... Bairro: " size="70" maxlength="200" required>
-      </div> -->
-      
-      <!-- <div class="form-group">  
-        <input type="cidade"  name="cidade" placeholder="Digite sua cidade" class="cidade" >
-        <input type="uf"  name="uf" placeholder="UF" class="">
-      </div> -->
-
       <div class="form-group">   
         <label for="email"></label>
         <input type="email"  [(ngModel)]="cadastros.email" name="email" id="email" placeholder="email@email.com" size="70" required>
-      </div>
-        
+      </div>        
         <div class="form-group">
             <label for="telefone"></label>
             <input type="tel"  [(ngModel)]="cadastros.phone" name="phone" id="telefone" placeholder="Telefone" size="70" required>
@@ -49,6 +38,7 @@
         <button type="submit" (click)="createCadastro()">Adote já!</button>
       </div>
   </form>
+
 
 </main>
 
