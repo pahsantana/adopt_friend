@@ -1,91 +1,152 @@
 main {
-  padding-top: 180px;
+  padding-top: 50px;
   min-height: 80vh;
   background-color: var(--light-primary-color);
 }
 
-.texto{
-    margin: 0 50px;
+p {
+  text-align: center;
 }
 
-section.plataforma .container,
-section.cadastro .container,
-section.adocao .container{
+section.plataforma,
+section.cadastro,
+section.adocao {
+  .container {
     display: flex;
     justify-content: space-around;
-    align-items: center;    
+    align-items: center;
+  }
+  .texto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
-
-section.plataforma .container,
-section.adocao .container{
+section.plataforma,
+section.adocao {
+  .container {
     flex-direction: row-reverse;
+  }
 }
 
-section.cadastro .container img,
-section.plataforma .container img {
-  width: 32vw;
-  height: 38vh;
-  margin: 10px;
+section.cadastro,
+section.plataforma {
+
+  .container {
+    img {
+      width: 32vw;
+      height: 38vh;
+      margin: 10px;
+      border: 1px solid black;
+      border-radius: 5px;
+      box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24);
+    }
+    button:hover{
+    
+        box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    // button:active{
+    //   box-shadow: 0;
+    // }
+  }
 }
 
+section.cadastro,
+section.adocao {
 
-section.adocao .container img {
-  width: 20vw;
-  height: 50vh;
-  margin: 10px 70px;
-}
+  .container {
+    p {
 
-section.cadastro .container h2{
-    font-size: 31px;
-    font-weight: 700;
-    text-align: center;
-}
+      font-weight: 400;
+      text-align: center;
+      font-size: 22px;
+      color: var(--secondary-text-color);
+    }
 
+    strong {
 
-section.plataforma .container .texto{
-    font-weight: 700;
-    font-size: 26px;
-    text-align: left;
-    max-width: 389px;
-    line-height: 29px;
-}
-section.cadastro .container p,
-section.adocao .container p{
-    font-weight: 400;
-    text-align: center;
-    font-size: 22px;
-    color: var(--secondary-text-color);
+      color: var(--text-primary-color);
+    }
+  }
+
 }
 
-section.adocao .container p strong{
-    color: var(--text-primary-color);
-}
+section.plataforma {
 
-section.plataforma .container button,
-section.cadastro .container button{
-    background-color:var(--text-primary-color); 
-    border: 1px solid;
-    border-radius: 8px;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    transition-duration: 0.4s;
-    font-size: 16px;
-    display: block;
-    margin-top: 40px;
-    font-weight: 700;
-}
+    .container {
+      .texto {
+  
+        font-weight: 700;
+        font-size: 26px;
+        text-align: left;
+        max-width: 389px;
+        line-height: 29px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-self: center;
+  
+        button {
+          margin: 10px 0;
+          background-color: var(--text-primary-color);
+          border: 1px solid;
+          border-radius: 8px;
+          color: white;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          transition-duration: 0.4s;
+          font-size: 16px;
+          display: block;
+          margin-top: 40px;
+          font-weight: 700;
+        }
+      }
+    }
+  }
 
-section.plataforma .container button{
-    margin-left: 90px;
-}
-section.cadastro .container button{
-    margin-left: 130px;
-}
+  section.cadastro {
 
-section.plataforma .container button:hover,
-section.cadastro .container button:hover{
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-}
+    .container {
+      button {
+  
+        background-color: var(--text-primary-color);
+        border: 1px solid;
+        border-radius: 8px;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        transition-duration: 0.4s;
+        font-size: 16px;
+        display: block;
+        margin-top: 40px;
+        font-weight: 700;
+      }
+      h2 {
+    
+        font-size: 31px;
+        font-weight: 700;
+        text-align: center;
+      }
+    }
+  }
+
+  section.adocao {
+
+    .container {
+      img {
+  
+        width: 20vw;
+        height: 50vh;
+        margin: 10px 70px;
+        border: 1px solid black;
+        border-radius: 5px;
+        box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+      }
+    }
+  }
+  
