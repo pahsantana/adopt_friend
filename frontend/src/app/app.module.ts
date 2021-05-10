@@ -23,7 +23,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { NgbdCarouselBasic } from './components/template/carousel-basic/carousel-basic.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CadastrosComponent } from './components/cadastros/cadastros.component';
+import { DataFormComponent } from './data-form/data-form.component';
 import { QuemSomosComponent } from './quem-somos/quem-somos.component';
+
 
 
 
@@ -32,6 +35,7 @@ export const rotas: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomePageComponent },
   { path: 'pets', component: SearchPetsPageComponent },
+  { path: 'cadastros', component: CadastrosComponent },
   { path: 'quem-somos', component: QuemSomosComponent },
   { path: '**', component: NotFoundComponent },
 ]
@@ -40,8 +44,10 @@ const components = [
   AppComponent,
   NotFoundComponent,
   FooterComponent,
+  
   HeaderComponent,
   SearchPetComponent
+  
 ]
 
 @NgModule({
@@ -52,6 +58,8 @@ const components = [
     CardComponent,
     SearchPetsPageComponent,
     NgbdCarouselBasic,
+    CadastrosComponent,
+    DataFormComponent
     QuemSomosComponent
   ],
   imports: [
