@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
@@ -26,12 +25,16 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { QuemSomosComponent } from './components/quem-somos/quem-somos.component';
 
 
+import { CadastrosComponent } from './components/cadastros/cadastros.component';
+import { DataFormComponent } from './data-form/data-form.component';
+
 
 export const rotas: Routes = [
 
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomePageComponent },
   { path: 'pets', component: SearchPetsPageComponent },
+  { path: 'cadastros', component: CadastrosComponent },
   { path: 'quem-somos', component: QuemSomosComponent },
   { path: '**', component: NotFoundComponent },
 ]
@@ -40,8 +43,10 @@ const components = [
   AppComponent,
   NotFoundComponent,
   FooterComponent,
+  
   HeaderComponent,
   SearchPetComponent
+  
 ]
 
 @NgModule({
@@ -52,6 +57,8 @@ const components = [
     CardComponent,
     SearchPetsPageComponent,
     NgbdCarouselBasic,
+    CadastrosComponent,
+    DataFormComponent,
     QuemSomosComponent
   ],
   imports: [
