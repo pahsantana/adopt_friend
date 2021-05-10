@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
@@ -23,12 +22,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { NgbdCarouselBasic } from './components/template/carousel-basic/carousel-basic.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 import { CadastrosComponent } from './components/cadastros/cadastros.component';
 import { DataFormComponent } from './data-form/data-form.component';
 import { QuemSomosComponent } from './quem-somos/quem-somos.component';
-
-
-
 
 export const rotas: Routes = [
 
