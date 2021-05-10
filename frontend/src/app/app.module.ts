@@ -25,6 +25,8 @@ import { NgbdCarouselBasic } from './components/template/carousel-basic/carousel
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CadastrosComponent } from './components/cadastros/cadastros.component';
 import { DataFormComponent } from './data-form/data-form.component';
+import { QuemSomosComponent } from './quem-somos/quem-somos.component';
+
 
 
 
@@ -34,6 +36,7 @@ export const rotas: Routes = [
   { path: 'home', component: HomePageComponent },
   { path: 'pets', component: SearchPetsPageComponent },
   { path: 'cadastros', component: CadastrosComponent },
+  { path: 'quem-somos', component: QuemSomosComponent },
   { path: '**', component: NotFoundComponent },
 ]
 
@@ -57,6 +60,7 @@ const components = [
     NgbdCarouselBasic,
     CadastrosComponent,
     DataFormComponent
+    QuemSomosComponent
   ],
   imports: [
     BrowserModule,

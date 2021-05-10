@@ -1,20 +1,25 @@
 @import "node_modules/@fortawesome/fontawesome-free/less/fontawesome.less";
-footer .container {
+
+.footer {
     background-color: #380070;
-    padding: 10px;
-    width: 100%;
-    height: 12vh;
-}
+    &__container {
+        padding: 10px;
+        width: 100%;
+        height: 12vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &--media-icon {
+            display: flex;
+            margin: 10px 6px;
+            align-content: center;
+            justify-content: center;
+        }
+    }
 
-.container .media-icons {
-    display: flex;
-    margin: 10px 6px;
-    align-content: center;
-    justify-content: center;
-}
-
-footer img{
-    width: 30px;
-    height: 30px;
-    margin: 0 10px;
+    img {
+        width: 30px;
+        height: 30px;
+        margin: 0 10px;
+    }
 }
