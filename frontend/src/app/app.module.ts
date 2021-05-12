@@ -1,3 +1,5 @@
+import { QuemSomosComponent } from './components/quem-somos/quem-somos.component';
+import { TermoResponsabilidadeComponent } from './components/termo-responsabilidade/termo-responsabilidade.component';
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -17,6 +19,8 @@ import { SearchPetsPageComponent } from './components/search-pets-page/search-pe
 
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+
+
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
@@ -30,8 +34,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { LoginComponent } from './components/login/login.component';
 import { CadastrosComponent } from './components/cadastros/cadastros.component';
 import { DataFormComponent } from './data-form/data-form.component';
-import { QuemSomosComponent } from './components/quem-somos/quem-somos.component';
-import { TermoResponsabilidadeComponent } from './components/termo-responsabilidade/termo-responsabilidade.component';
+
+
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { AdocaoComponent } from './components/adocao/adocao.component';
@@ -80,7 +84,6 @@ const components = [
     MatButtonModule,
     MatIconModule,
     MatToolbarModule,
-
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
