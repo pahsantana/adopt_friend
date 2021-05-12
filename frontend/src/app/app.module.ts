@@ -1,6 +1,7 @@
+import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,50 +27,43 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
+import { LoginComponent } from './components/login/login.component';
 import { CadastrosComponent } from './components/cadastros/cadastros.component';
 import { DataFormComponent } from './data-form/data-form.component';
 import { QuemSomosComponent } from './components/quem-somos/quem-somos.component';
 import { TermoResponsabilidadeComponent } from './components/termo-responsabilidade/termo-responsabilidade.component';
 
+import { ReactiveFormsModule } from '@angular/forms';
+import { AdocaoComponent } from './components/adocao/adocao.component';
 
-export const rotas: Routes = [
-
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomePageComponent },
-  { path: 'pets', component: SearchPetsPageComponent },
-  { path: 'cadastros', component: CadastrosComponent },
-  { path: 'quem-somos', component: QuemSomosComponent },
-  { path: 'termo-responsabilidade', component: TermoResponsabilidadeComponent },
-  { path: '**', component: NotFoundComponent },
-]
 
 const components = [
   AppComponent,
   NotFoundComponent,
   FooterComponent,
-  
   HeaderComponent,
-  SearchPetComponent
-  
+  SearchPetComponent,
+  HeaderHomeComponent,
+  HomePageComponent,
+  CardComponent,
+  SearchPetsPageComponent,
+  NgbdCarouselBasic,
+  CadastrosComponent,
+  DataFormComponent,
+  QuemSomosComponent,
+  TermoResponsabilidadeComponent,
+  LoginComponent,
+  AdocaoComponent
 ]
 
 @NgModule({
   declarations: [
     ...components,
-    HeaderHomeComponent,
-    HomePageComponent,
-    CardComponent,
-    SearchPetsPageComponent,
-    NgbdCarouselBasic,
-    CadastrosComponent,
-    DataFormComponent,
-    QuemSomosComponent,
-    TermoResponsabilidadeComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forChild(rotas),
     BrowserAnimationsModule,
     MatIconModule,
     MatToolbarModule,
@@ -78,15 +72,17 @@ const components = [
     NgbModule,
     FormsModule,
     HttpClientModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    ReactiveFormsModule
   ],
   exports: [
     RouterModule,
     MatButtonModule,
     MatIconModule,
     MatToolbarModule,
+
   ],
-  providers: [],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

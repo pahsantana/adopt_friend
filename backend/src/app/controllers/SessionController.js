@@ -14,7 +14,7 @@ class SessionController {
 		}
 
         if (!(await user.checkPassword(password))) {
-            return res.status(401).json({ error: 'Senha não confere'});
+          return res.status(401).json({ error: 'Senha não confere'});
         }
 
         const { id, name} = user;
@@ -31,6 +31,5 @@ class SessionController {
         })
     }
 }
-
 
 export default new SessionController();

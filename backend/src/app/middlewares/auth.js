@@ -4,10 +4,10 @@ import { promisify } from 'util';
 import authConfig from '../../config/auth';
 
 export default async (req ,res, next) => {
-    let authHeader = req.headers.authorization;
+    let authHeader = req.headers["x-access-token"];
 
     if (!authHeader) {
-        return res.status(401).json({ error: 'token não fornecido' })
+        return res.status(401).json({ error: 'Token não fornecido' })
     }
 
     const [, token] = authHeader.split(' ');
@@ -16,6 +16,7 @@ export default async (req ,res, next) => {
         const decoded = await promisify(jwt.verify)(token, authConfig.secret);
 
         req.userId = decoded.id;
+        console.log(decoded)
 
         return next();
     } catch (err) {

@@ -17,13 +17,12 @@ const upload_pet = multer(multerConfig_pet);
 
 const routes = new Router();
 
-
 routes.post('/users', UserController.store);
+routes.post('/session', SessionController.store);
+routes.use(authMiddleware);
 routes.post('/files/user', upload_user.single('file'), FileController.store);
 // routes.post('/files/:user_id', upload_user.single('file'), FileController.store);
 routes.post('/users/:user_id/address',AddressController.store);
-routes.post('/session', SessionController.store);
-routes.use(authMiddleware);
 routes.get('/users/:id', UserController.index);
 routes.put('/users/:id', UserController.update);
 routes.delete('/users/:id', UserController.delete);

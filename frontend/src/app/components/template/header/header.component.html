@@ -1,28 +1,43 @@
 <header>
-    <div class="container">
-        <a routerLink="/home" class="logo">
-            <img src="assets/img/logo.png" alt="Logo Adopt Friend - descrição: Cachorro e gato num lar amoroso">
-        </a>
-        <nav>
-            <ul>
-                <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-                    <mat-icon>menu</mat-icon>
-                  </button>
-                  <mat-menu #menu="matMenu">
-                    <button mat-menu-item>
-                      <mat-icon>account_circle</mat-icon>
-                      <span>Meu Cadastro</span>
-                    </button>
-                    <button mat-menu-item>
-                      <mat-icon>pets</mat-icon>
-                      <span>Cadastrar um Pet</span>
-                    </button>
-                    <button mat-menu-item>
-                      <mat-icon>favorite</mat-icon>
-                      <span>Adotar um Pet</span>
-                    </button>
-                  </mat-menu>
-            </ul>
-        </nav>
-    </div>
+  <div class="container">
+    <a routerLink="/home" class="logo" routerLinkActive="active">
+      <img src="assets/img/logo.png" alt="Logo Adopt Friend - descrição: Cachorro e gato num lar amoroso">
+    </a>
+    <nav>
+      <ul *ngIf="!isLoggedIn">
+        <li><a routerLink="/quem-somos">Quem somos</a></li>
+        <li><a>Contatos</a></li>
+        <li><a routerLink="/login">Login</a></li>
+        <li><a routerLink="/cadastros">Cadastre-se</a></li>
+      </ul>
+      <ul *ngIf="isLoggedIn">
+        <li class="nav-item">
+          <a href="/user" class="nav-link" *ngIf="isLoggedIn" routerLink="user">User</a>
+        </li>
+        <li class="nav-item">
+          <a href="/profile" class="nav-link" routerLink="profile">{{ email }}</a>
+        </li>
+        <li class="nav-item">
+          <a href class="nav-link" (click)="logout()">LogOut</a>
+        </li>
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>
+            <mat-icon>account_circle</mat-icon>
+            <span>Meu Cadastro</span>
+          </button>
+          <button mat-menu-item>
+            <mat-icon>pets</mat-icon>
+            <span>Cadastrar um Pet</span>
+          </button>
+          <button mat-menu-item>
+            <mat-icon>favorite</mat-icon>
+            <span>Adotar um Pet</span>
+          </button>
+        </mat-menu>
+      </ul>
+    </nav>
+  </div>
 </header>

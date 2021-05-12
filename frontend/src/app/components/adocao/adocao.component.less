@@ -1,0 +1,64 @@
+.example-card {
+  margin: 70px 15px;
+  max-width: 900px;
+  height: 500px;
+  width: 800px;
+  border: 1px solid black;
+  border-radius: 30px;
+  background-color: #B2DFEE;
+  align-items: center;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24);
+
+  mat-card-title {
+    font-size: 30px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+
+
+  mat-card-content {
+    display: flex;
+    justify-content: space-between;
+
+    .pet-description {
+      margin-top: 10px;
+      background-color: lightgrey;
+      border: 2px solid black;
+      border-radius: 15px;
+      display: flex;
+      flex-direction: column;
+
+      .infos {
+        display: flex;
+        flex-direction: column;
+      }
+
+      ul {
+        list-style: none;
+        margin: 5px 0;
+        padding: 0 5px;
+      }
+
+      p {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
+  }
+
+  img {
+    height: 30vh;
+    width: 20vw;
+    margin: 10px 7px;
+  }
+}
+
+.background {
+  background-color: skyblue;
+  padding: 30px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

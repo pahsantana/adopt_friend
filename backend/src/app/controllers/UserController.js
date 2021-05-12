@@ -1,6 +1,8 @@
 import * as Yup from "yup";
 import User from '../models/Users';
-import UserId, { userId } from '../middlewares/auth'
+import { userId } from '../middlewares/auth'
+import jwt from 'jsonwebtoken';
+import authConfig from '../../config/auth';
 
 class UserController {
 
@@ -48,7 +50,10 @@ class UserController {
                 cpf,
                 email,
                 phone
-            }
+            } ,
+            token: jwt.sign({ id }, authConfig.secret, {
+                expiresIn: authConfig.expiresIn,
+            }),
         })
 
     }

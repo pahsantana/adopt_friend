@@ -6,7 +6,8 @@ import './database';
 
 
 var corsOptions = {
-    origin: "http://localhost:8081"
+    origin: "http://localhost:8081",
+    optionsSucessStatus: 200
 };
 
 class App {
