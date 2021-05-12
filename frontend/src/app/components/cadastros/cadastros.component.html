@@ -13,33 +13,35 @@
   <form>
     <div class="contato">
       <div class="form-group">
-        <label for="nome"></label>
+        <label for="nome">Nome Completo/Nome social</label>
         <input type="text" [(ngModel)]="cadastros.name" id="nome" name="name"
           placeholder="Digite seu nome completo/Nome Social" size="70" maxlength="50" required>
       </div>
 
       <div class="form-group">
-        <label for="cpf"></label>
+        <label for="cpf">CPF</label>
         <input type="text" [(ngModel)]="cadastros.cpf" name="cpf" id="cpf" placeholder="Digite aqui o seu cpf" size="70"
           required>
       </div>
 
       <div class="form-group">
-        <label for="email"></label>
+        <label for="email">Email</label>
         <input type="email" [(ngModel)]="cadastros.email" name="email" id="email" placeholder="email@email.com"
           size="70" required>
       </div>
       <div class="form-group">
-        <label for="telefone"></label>
+        <label for="telefone">Telefone</label>
         <input type="tel" [(ngModel)]="cadastros.phone" name="phone" id="telefone" placeholder="Telefone" size="70"
           required>
       </div>
 
       <div class="form-group">
+        <label for="password">Senha</label>
         <input type="password" [(ngModel)]="cadastros.password" name="password" placeholder="Digite aqui a sua senha"
           size="70" class="senha" required>
       </div>
       <div class="form-group">
+        <label for="confirmPassword">Confirme sua senha</label>
         <input type="password" [(ngModel)]="cadastros.confirmPassword" name="confirmPassword"
           placeholder="Digite sua senha novamente" size="70" required>
       </div>
