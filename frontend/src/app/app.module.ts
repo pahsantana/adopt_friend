@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
@@ -25,12 +24,13 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { NgbdCarouselBasic } from './components/template/carousel-basic/carousel-basic.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
 import { CadastrosComponent } from './components/cadastros/cadastros.component';
 import { DataFormComponent } from './data-form/data-form.component';
-import { QuemSomosComponent } from './quem-somos/quem-somos.component';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { ModalComponent } from './components/template/modal/modal.component';
-import { ModalModule } from 'ngx-bootstrap/modal';
+
 
 
 
@@ -42,6 +42,7 @@ export const rotas: Routes = [
   { path: 'cadastros', component: CadastrosComponent },
   { path: 'data-form', component: DataFormComponent },
   { path: 'quem-somos', component: QuemSomosComponent },
+  { path: 'termo-responsabilidade', component: TermoResponsabilidadeComponent },
   { path: '**', component: NotFoundComponent },
 ]
 
@@ -65,9 +66,7 @@ const components = [
     CadastrosComponent,
     DataFormComponent,
     QuemSomosComponent,
-    ModalComponent
-       
-    
+
   ],
   imports: [
     BrowserModule,
@@ -79,12 +78,7 @@ const components = [
     MatCardModule,
     MatMenuModule,
     NgbModule,
-    MatButtonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    ModalModule
-      
-                
+
   ],
   exports: [
     RouterModule,

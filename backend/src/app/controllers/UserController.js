@@ -32,10 +32,10 @@ class UserController {
             return res.status(400).json({ error: 'Cadastro inválido, verifique os item obrigatórios' });
         }
 
-        const userExists = await User.findOne({ where: { cpf: req.body.cpf } })
+        const userExists = await User.findOne({ where: { cpf: req.body.cpf, email: req.body.email } })
 
         if (userExists) {
-            return res.status(400).json({ error: `CPF ${req.body.cpf} já está cadastrado` })
+            return res.status(400).json({ error: `Usuário já cadastrado.` })
         }
 
         const { id, name, cpf, email, phone } = await User.create(req.body);
