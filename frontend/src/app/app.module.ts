@@ -16,6 +16,8 @@ import { SearchPetsPageComponent } from './components/search-pets-page/search-pe
 
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+
+
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
@@ -28,8 +30,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { CadastrosComponent } from './components/cadastros/cadastros.component';
 import { DataFormComponent } from './data-form/data-form.component';
-import { QuemSomosComponent } from './components/quem-somos/quem-somos.component';
-import { TermoResponsabilidadeComponent } from './components/termo-responsabilidade/termo-responsabilidade.component';
+
+
 
 
 export const rotas: Routes = [
@@ -38,6 +40,7 @@ export const rotas: Routes = [
   { path: 'home', component: HomePageComponent },
   { path: 'pets', component: SearchPetsPageComponent },
   { path: 'cadastros', component: CadastrosComponent },
+  { path: 'data-form', component: DataFormComponent },
   { path: 'quem-somos', component: QuemSomosComponent },
   { path: 'termo-responsabilidade', component: TermoResponsabilidadeComponent },
   { path: '**', component: NotFoundComponent },
@@ -47,7 +50,6 @@ const components = [
   AppComponent,
   NotFoundComponent,
   FooterComponent,
-  
   HeaderComponent,
   SearchPetComponent
   
@@ -64,7 +66,7 @@ const components = [
     CadastrosComponent,
     DataFormComponent,
     QuemSomosComponent,
-    TermoResponsabilidadeComponent
+
   ],
   imports: [
     BrowserModule,
@@ -76,15 +78,15 @@ const components = [
     MatCardModule,
     MatMenuModule,
     NgbModule,
-    FormsModule,
-    HttpClientModule,
-    MatSnackBarModule
+
   ],
   exports: [
     RouterModule,
     MatButtonModule,
     MatIconModule,
     MatToolbarModule,
+    
+   
   ],
   providers: [],
   bootstrap: [AppComponent]
