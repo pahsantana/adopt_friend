@@ -35,10 +35,11 @@ import { LoginComponent } from './components/login/login.component';
 import { CadastrosComponent } from './components/cadastros/cadastros.component';
 import { DataFormComponent } from './data-form/data-form.component';
 
-
-
 import { ReactiveFormsModule } from '@angular/forms';
 import { AdocaoComponent } from './components/adocao/adocao.component';
+
+import { ModalComponent } from './components/template/modal/modal.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 
 const components = [
@@ -57,7 +58,8 @@ const components = [
   QuemSomosComponent,
   TermoResponsabilidadeComponent,
   LoginComponent,
-  AdocaoComponent
+  AdocaoComponent,
+  ModalComponent
 ]
 
 @NgModule({
@@ -77,7 +79,8 @@ const components = [
     FormsModule,
     HttpClientModule,
     MatSnackBarModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ModalModule
   ],
   exports: [
     RouterModule,
