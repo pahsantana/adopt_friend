@@ -17,6 +17,8 @@ import { SearchPetsPageComponent } from './components/search-pets-page/search-pe
 
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+
+
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
@@ -26,7 +28,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CadastrosComponent } from './components/cadastros/cadastros.component';
 import { DataFormComponent } from './data-form/data-form.component';
 import { QuemSomosComponent } from './quem-somos/quem-somos.component';
-
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { ModalComponent } from './components/template/modal/modal.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 
 
@@ -36,6 +40,7 @@ export const rotas: Routes = [
   { path: 'home', component: HomePageComponent },
   { path: 'pets', component: SearchPetsPageComponent },
   { path: 'cadastros', component: CadastrosComponent },
+  { path: 'data-form', component: DataFormComponent },
   { path: 'quem-somos', component: QuemSomosComponent },
   { path: '**', component: NotFoundComponent },
 ]
@@ -44,7 +49,6 @@ const components = [
   AppComponent,
   NotFoundComponent,
   FooterComponent,
-  
   HeaderComponent,
   SearchPetComponent
   
@@ -59,8 +63,11 @@ const components = [
     SearchPetsPageComponent,
     NgbdCarouselBasic,
     CadastrosComponent,
-    DataFormComponent
-    QuemSomosComponent
+    DataFormComponent,
+    QuemSomosComponent,
+    ModalComponent
+       
+    
   ],
   imports: [
     BrowserModule,
@@ -71,13 +78,21 @@ const components = [
     MatToolbarModule,
     MatCardModule,
     MatMenuModule,
-    NgbModule
+    NgbModule,
+    MatButtonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    ModalModule
+      
+                
   ],
   exports: [
     RouterModule,
     MatButtonModule,
     MatIconModule,
     MatToolbarModule,
+    
+   
   ],
   providers: [],
   bootstrap: [AppComponent]
