@@ -1,6 +1,6 @@
 import * as Yup from "yup";
 import User from '../models/Users';
-import UserId, { userId } from '../middlewares/auth'
+import  { userId } from '../middlewares/auth'
 
 class UserController {
 

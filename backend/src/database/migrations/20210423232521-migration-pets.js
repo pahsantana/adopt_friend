@@ -45,10 +45,7 @@ module.exports = {
       is_adopted: {
         type: Sequelize.BOOLEAN,
         allowNull: false,
-<<<<<<< HEAD:src/database/migrations/20210423232521-migration-pets.js
-=======
         defaultValue: false,
->>>>>>> bbbdbd01e42e62ed4f89e41ef734c49d5dc7bdaf:src/database/migrations/20210423224426-migration-pets.js
       },
       created_at: {
         type: Sequelize.DATE,
