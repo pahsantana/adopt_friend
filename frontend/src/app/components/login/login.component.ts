@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
       var tokenDec = this.currentUser.token
       this.decoded = jwt_decode(tokenDec);
       this.email = this.tokenStorage.getUser().email;
-      console.log(this.decoded)
+      this.currentUser = this.tokenStorage.getUser();
     }
   }
 

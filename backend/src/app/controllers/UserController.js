@@ -1,16 +1,14 @@
 import * as Yup from "yup";
 import User from '../models/Users';
 import { userId } from '../middlewares/auth'
-import jwt from 'jsonwebtoken';
-import authConfig from '../../config/auth';
 
 class UserController {
 
     async index(req, res) {
-        const users = await User.findOne({where:{id: req.params.id}});
+        const users = await User.findByPk(req.userId);
 
         return res.json({
-            Name: users.name,
+            name: users.name,
             cpf: users.cpf,
             email: users.email,
             phone: users.phone
@@ -50,10 +48,7 @@ class UserController {
                 cpf,
                 email,
                 phone
-            } ,
-            token: jwt.sign({ id }, authConfig.secret, {
-                expiresIn: authConfig.expiresIn,
-            }),
+            }
         })
 
     }
@@ -78,7 +73,7 @@ class UserController {
 
         const {email,oldPassword} = req.body;
 
-        const user = await User.findByPk(req.params.id);
+        const user = await User.findByPk(req.userId);
 
         if(email && email != user.email){
             const userExists = await User.findOne({ where: {email}});
@@ -105,10 +100,10 @@ class UserController {
 
 
     async delete(req, res){
-
         try {
             const user = await User.findByPk(req.params.id);
       
+            ({ where: { id_cliente: req.clienteId } })
             await user.destroy();
       
             return res.status(200).json({message: `Usuario ${userId} foi deletado`});

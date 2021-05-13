@@ -7,7 +7,11 @@ import './database';
 
 var corsOptions = {
     origin: "http://localhost:8081",
-    optionsSucessStatus: 200
+    optionsSucessStatus: 200,
+    AccessControlAllowOrigin: '*',
+    AccessControlAllowCredentials: true,
+    AccessControlAllowMethods: ['GET', 'POST', 'PUT', 'DELETE'],
+    AccessControlAllowHeaders: '*'
 };
 
 class App {
@@ -22,6 +26,18 @@ class App {
         this.server.use(cors(corsOptions));
         this.server.use(express.json());
         this.server.use(express.urlencoded({extended:true}));
+        // this.server.use((req, res, next) => {
+        //     const token = req.headers.authorization;
+        //     console.log('####################################');
+        //     if(token) {
+        //         console.log('A token is send by the application');
+        //         console.log('Token value is ' + token);
+        //     } else {
+        //         console.log('No token is send by the the application');
+        //     }
+        //     console.log('####################################');
+        //     next();
+        // });
     };
 
     routes(){

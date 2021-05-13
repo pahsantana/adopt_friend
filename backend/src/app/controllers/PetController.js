@@ -3,13 +3,14 @@ import * as Yup from "yup";
 import {Op} from 'sequelize'
 import Pet from '../models/Pets';
 import User from '../models/Users';
+import { userId } from '../middlewares/auth'
 
 class PetController{
 
     async index(req, res){
-        const {user_id} = req.params;
-
-        const user = await User.findByPk(user_id, {
+        
+        
+        const user = await User.findByPk(req.userId, {
             include: { association: 'pet'}
         });
         
@@ -22,10 +23,9 @@ class PetController{
 
     async store(req, res){
 
-        const {user_id} = req.params;
         const {name, age, size, gender,breed, weight, vaccine, castration, microchip, description} = req.body;
-
-        const user = await User.findByPk(user_id);
+        let user_id=req.userId;
+        const user = await User.findByPk(req.userId);
 
         if(!user){
             return res.status(400).json({error: "Usuario não existe"})

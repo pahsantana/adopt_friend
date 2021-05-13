@@ -26,8 +26,6 @@ export class DataFormComponent implements OnInit {
     microchip: false,
     description: ''
   }
-
-  id: null;
   isLoggedIn = false;
   currentUser: any;
   decoded: any;
@@ -38,7 +36,6 @@ export class DataFormComponent implements OnInit {
       this.currentUser = this.tokenStorage.getUser();
       var tokenDec = this.currentUser.token
       this.decoded = jwt_decode(tokenDec);
-      var id = this.decoded.id
     }
   }
   createCadastroPet(): void {
@@ -46,5 +43,4 @@ export class DataFormComponent implements OnInit {
       this.router.navigate(['/'])
     })
   }
-
 }
