@@ -44,6 +44,7 @@ import { EnderecoComponent } from './components/endereco/endereco.component';
 import { MeusDadosComponent } from './components/meus-dados/meus-dados.component';
 
 import { MatSelectModule } from '@angular/material/select';
+import { UpdatePetComponent } from './components/update-pet/update-pet.component';
 
 
 const components = [
@@ -71,6 +72,7 @@ const components = [
     ...components,
     EnderecoComponent,
     MeusDadosComponent,
+    UpdatePetComponent,
 
   ],
   imports: [
