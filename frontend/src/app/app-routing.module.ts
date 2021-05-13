@@ -11,7 +11,8 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 import { LoginComponent } from './components/login/login.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { BoardUserComponent } from './components/board-user/board-user.component';
-
+import {EnderecoComponent} from './components/endereco/endereco.component';
+import { MeusDadosComponent } from './components/meus-dados/meus-dados.component';
 
 export const rotas: Routes = [
 
@@ -19,6 +20,7 @@ export const rotas: Routes = [
   { path: 'home', component: HomePageComponent },
   { path: 'pets', component: SearchPetsPageComponent },
   { path: 'cadastros', component: CadastrosComponent },
+  { path: 'endereco', component: EnderecoComponent },
   { path: 'quem-somos', component: QuemSomosComponent },
   { path: 'termo-responsabilidade', component: TermoResponsabilidadeComponent },
   { path: 'data-form', component: DataFormComponent },
@@ -26,6 +28,7 @@ export const rotas: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'user', component: BoardUserComponent },
   { path: 'adocao', component: AdocaoComponent },
+  { path: 'meus-dados', component: MeusDadosComponent },
   { path: '**', component: NotFoundComponent },
 ]
 
