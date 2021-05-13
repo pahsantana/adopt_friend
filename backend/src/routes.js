@@ -19,6 +19,7 @@ const routes = new Router();
 
 routes.post('/users', UserController.store);
 routes.post('/session', SessionController.store);
+routes.post('/users/:user_id/pets',PetController.store);
 routes.use(authMiddleware);
 routes.post('/files/user', upload_user.single('file'), FileController.store);
 // routes.post('/files/:user_id', upload_user.single('file'), FileController.store);
@@ -31,7 +32,7 @@ routes.get('/users/:user_id/address',AddressController.index);
 routes.put('/address/:id',AddressController.update);
 routes.delete('/address/:id',AddressController.delete);
 
-routes.post('/users/:user_id/pets',PetController.store);
+
 // routes.post('/files/:pet_id', upload_pet.single('file'), FileController.store);
 routes.post('/files/pet', upload_pet.single('file'), FileController.store);
 routes.get('/users/:user_id/pets',PetController.index);

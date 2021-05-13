@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Cadastros } from '../../app/components/cadastros/cadastros.model';
 
 const AUTH_API = 'http://localhost:8080/';
 

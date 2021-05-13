@@ -26,6 +26,7 @@
     "angular-font-awesome": "^3.1.2",
     "bootstrap": "^5.0.0",
     "font-awesome": "^4.7.0",
+    "jwt-decode": "^3.1.2",
     "ngx-bootstrap": "^6.2.0",
     "rxjs": "~6.6.0",
     "sweetalert2": "^10.16.7",

@@ -41,6 +41,8 @@ import { AdocaoComponent } from './components/adocao/adocao.component';
 import { ModalComponent } from './components/template/modal/modal.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 
+import { MatSelectModule } from '@angular/material/select';
+
 
 const components = [
   AppComponent,
@@ -80,7 +82,9 @@ const components = [
     HttpClientModule,
     MatSnackBarModule,
     ReactiveFormsModule,
-    ModalModule
+    ModalModule,
+    MatSelectModule
+
   ],
   exports: [
     RouterModule,

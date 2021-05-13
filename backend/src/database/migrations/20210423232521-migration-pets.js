@@ -26,6 +26,11 @@ module.exports = {
       },
       size: {
         type: Sequelize.STRING,
+        allowNull: false,
+      },
+      gender:{
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       breed: {
         type: Sequelize.STRING
@@ -42,13 +47,13 @@ module.exports = {
       microchip: {
         type: Sequelize.BOOLEAN,
       },
+      description:{
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
       is_adopted: {
         type: Sequelize.BOOLEAN,
-        allowNull: false,
-<<<<<<< HEAD:src/database/migrations/20210423232521-migration-pets.js
-=======
-        defaultValue: false,
->>>>>>> bbbdbd01e42e62ed4f89e41ef734c49d5dc7bdaf:src/database/migrations/20210423224426-migration-pets.js
+        defaultValue: false
       },
       created_at: {
         type: Sequelize.DATE,

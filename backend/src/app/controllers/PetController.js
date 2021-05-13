@@ -23,7 +23,7 @@ class PetController{
     async store(req, res){
 
         const {user_id} = req.params;
-        const {name, age, size, breed, weight, vaccine, castration, microchip} = req.body;
+        const {name, age, size, gender,breed, weight, vaccine, castration, microchip, description} = req.body;
 
         const user = await User.findByPk(user_id);
 
@@ -35,11 +35,13 @@ class PetController{
              name,
              age,
              size,
+             gender,
              breed,
              weight,
              vaccine,
              castration,
              microchip,
+             description,
              user_id
          })
 
@@ -47,11 +49,13 @@ class PetController{
             name,
             age,
             size,
+            gender,
             breed,
             weight,
             vaccine,
             castration,
             microchip,
+            description
         });
     };
 
@@ -156,12 +160,14 @@ class PetController{
         const schema = Yup.object().shape({
             name: Yup.string().required(),
             age: Yup.number(),
-            size: Yup.string(),
+            size: Yup.string().required(),
+            gender: Yup.string().required(),
             breed: Yup.string(),
             weight: Yup.number(),
             vaccine: Yup.boolean(),
             castration: Yup.boolean(),
             microchip: Yup.boolean(),
+            description: Yup.string().required(),
         });
 
         if (!(await schema.isValid(req.body))) {
@@ -170,17 +176,19 @@ class PetController{
 
         const pet = await Pet.findByPk(req.params.id);
 
-        const { name, age, size, breed, weight, vaccine, castration, microchip } = await pet.update(req.body);
+        const { name, age, size, gender, breed, weight, vaccine, castration, microchip,description } = await pet.update(req.body);
 
         return res.json({
             name,
             age,
             size,
+            gender,
             breed,
             weight,
             vaccine,
             castration,
-            microchip
+            microchip,
+            description
         });
     }
 
