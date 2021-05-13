@@ -4,7 +4,11 @@ import  User  from '../app/models/Users';
 import Address from '../app/models/Addresses';
 import Pet from '../app/models/Pets';
 import File from '../app/models/File';
+<<<<<<< HEAD
 // import Event from '../app/models/Events'
+=======
+import databaseConfig from '../config/database';
+>>>>>>> d740b2dcf45c18159bafd198028af3b0e0ae239d
 
 const models = [User,Address, Pet, File];
 

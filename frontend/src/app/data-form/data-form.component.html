@@ -1,50 +1,112 @@
+<main>
+  <div class="text">
+    <h1><strong> Cadastrar um pet</strong></h1>
+    <p>Para cadastrar um pet, precisamos saber um pouco mais de você, pois do ponto de vista do animal, ser abandonado
+      pelo amigo é muito doloroso, e eles já sofreram isso uma vez e não queremos que isso se repita. Eles não merecem
+      ser tratados com desprezo.
 
-   <h1> Dados do Pet </h1> 
-   <form>
-     <div class="dadospets">
-     <div class="form-group">  
-       <input type="radio" name="animal" id="cao"value="cao" class="cao">
-       <label for="cachorro">Cachorro</label>
-   
-       
-       <input type="radio" name="animal" id="gato" value="gato" class="gato">
-       <label for="gato">Gato</label>
-       </div>
-   
-       <div class="form-group">
-         <label for="Nome"></label>
-         <input type="text"  name="nome" id="nome" class="nome" placeholder="Digite aqui o nome do pet" size="70" required>
-     </div>
-   
-     <div class="form-group">   
-       <label for="idade"></label>
-       <input type="text"  name="idade" id="idade" class="idade" placeholder="Digite a idade do seu pet" size="70" required>
-     </div>
-       
-   
-       <div class="form-group"> 
-         <label for="raca"></label>
-         <input type="text" id="raca"placeholder="Digite aqui a raça do seu pet" class="raca" size="70" maxlength="50"required>
-       </div>
-   
-       <div class="form-group">  
-         <input type="radio" name="porte" id="pequeno"value="pequeno" class="porte">
-         <label for="pequeno">Pequeno</label>
-   
-         <input type="radio" name="porte" id="medio" value="medio" class="porte">
-         <label for="medio">Médio</label>
-   
-         <input type="radio" name="porte" id="grande" value="grande" class="porte">
-         <label for="grande">Grande</label>
-       </div>
-       
-       
-       <div class="form-group">  
-         <textarea cols="75" id="resumo" rows="10" name="resumo" maxlength="100" wrap="hard" placeholder="Descreva mais sobre o seu pet "></textarea><br>   
-       </div>
-       
-     </div>
-        
-       
-   </form>
-   <input class="bottom" type="submit" value="Pronto!">
+      Sendo assim, abaixo, clique no botão de Cadastro. Ele deverá ser totalmente preenchido e o nome do cão de
+      interesse citado. Após análise, entraremos em contato com você.
+    </p>
+  </div>
+  <h1><strong> Dados do Pet</strong> </h1>
+
+  <form>
+
+    <div class="dadospets">
+
+      <div class="form-row">
+        <div class="form-group col-md-12">
+          <label for="nomePet">Nome</label>
+          <input name="name" required type="text" class="form-control" id="nome" placeholder="Digite o nome do Pet"
+            [(ngModel)]="dataForm.name">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <label for="Idade">Idade</label>
+            <input name="age" type="text" class="form-control" id="Idade" [(ngModel)]="dataForm.age">
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputState">Porte</label>
+            <select class="form-control" name="size" required id="inputState" class="form-control"
+              [(ngModel)]="dataForm.size">
+              <option selected disabled>Selecione uma opção</option>
+              <option value="Pequeno">Pequeno</option>
+              <option value="Médio">Médio</option>
+              <option value="Grande">Grande</option>
+            </select>
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputState">Gênero</label>
+            <select required name="gender" id="inputState" class="form-control" [(ngModel)]="dataForm.gender">
+              <option selected disabled>Selecione uma opção</option>
+              <option value="Macho">Macho</option>
+              <option value="Fêmea">Fêmea</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-12">
+          <label for="raca">Raça</label>
+          <input name="breed" type="text" class="form-control" id="raca" placeholder="Digite a raça do seu pet."
+            [(ngModel)]="dataForm.breed">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-12">
+          <label for="peso">Peso</label>
+          <input name="weight" type="text" class="form-control" id="peso" placeholder="Digite o peso(Kg) do seu pet."
+            [(ngModel)]="dataForm.weight">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <label for="inputState">Vacina</label>
+          <select name="vaccine" id="inputState" class="form-control" [(ngModel)]="dataForm.vaccine">
+            <option selected>Selecione uma opção</option>
+            <option value="true">Sim</option>
+            <option value="false">Não</option>
+          </select>
+        </div>
+        <div class="form-group col-md-4">
+          <label for="inputState">Castração</label>
+          <select name="castration" id="inputState" class="form-control" [(ngModel)]="dataForm.castration">
+            <option selected>Selecione uma opção</option>
+            <option value="true">Sim</option>
+            <option value="false">Não</option>
+          </select>
+        </div>
+
+        <div class="form-group col-md-4">
+          <label for="inputState">Microchip</label>
+          <select name="microchip" id="inputState" class="form-control" [(ngModel)]="dataForm.microchip">
+            <option selected>Selecione uma opção</option>
+            <option value="true">Sim</option>
+            <option value="false">Não</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="comment">Descrição</label>
+        <textarea name="description" class="form-control" cols="1" rows="6" id="comment"
+          placeholder="Descreva mais sobre o seu pet" [(ngModel)]="dataForm.description" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <ngbd-modal-basic></ngbd-modal-basic>
+      </div>
+
+    </div>
+
+    <div class="form-group">
+
+      <button type="submit" (click)="createCadastroPet()" class="btn btn-outline-dark">Cadastrar pet</button>
+    </div>
+
+  </form>
+
+</main>

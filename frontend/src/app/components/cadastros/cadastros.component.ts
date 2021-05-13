@@ -11,15 +11,15 @@ import { Cadastros } from './cadastros.model';
 })
 export class CadastrosComponent implements OnInit {
 
-  constructor(private cadastrosService: CadastrosService, private router:Router) { }
+  constructor(private cadastrosService: CadastrosService, private router: Router) { }
 
   cadastros: Cadastros = {
     name: '',
-    cpf:'',
-    email:'',
-    phone:'',
-    password:'',
-    confirmPassword:''
+    cpf: '',
+    email: '',
+    phone: '',
+    password: '',
+    confirmPassword: ''
   }
 
   ngOnInit(): void {

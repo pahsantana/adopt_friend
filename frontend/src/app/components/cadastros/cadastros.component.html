@@ -1,44 +1,53 @@
-<app-header></app-header>
 <main>
-      
-                    <h1> Cadastrar um pet</h1>
-                    <p>Para cadastrar um pet, precisamos saber um pouco mais de você, pois do ponto de vista do animal, ser abandonado pelo amigo é muito doloroso, e eles já sofreram isso uma vez e não queremos que isso se repita. Eles não merecem ser tratados com desprezo.
-                        Sendo assim, abaixo, clique no botão de Cadastro. Ele deverá ser totalmente preenchido e o nome do cão de interesse citado. Após análise, entraremos em contato com você.
-                     </p>
-                     <h1> Dados do Usuário </h1> 
-        
-                 
+
+  <h1> Cadastrar um pet</h1>
+  <p>Para cadastrar um pet, precisamos saber um pouco mais de você, pois do ponto de vista do animal, ser abandonado
+    pelo amigo é muito doloroso, e eles já sofreram isso uma vez e não queremos que isso se repita. Eles não merecem ser
+    tratados com desprezo.
+    Sendo assim, abaixo, clique no botão de Cadastro. Ele deverá ser totalmente preenchido e o nome do cão de interesse
+    citado. Após análise, entraremos em contato com você.
+  </p>
+  <h2> Dados do Usuário </h2>
+
+
   <form>
     <div class="contato">
       <div class="form-group">
-          <label for="nome"></label>
-          <input type="text" [(ngModel)]="cadastros.name"  id="nome" name="name" placeholder="Digite seu nome completo/Nome Social" size="70" maxlength="50"required>
+        <label for="nome">Nome Completo/Nome social</label>
+        <input type="text" [(ngModel)]="cadastros.name" id="nome" name="name"
+          placeholder="Digite seu nome completo/Nome Social" size="70" maxlength="50" required>
       </div>
 
-      <div class="form-group">   
-        <label for="cpf"></label>
-        <input type="text" [(ngModel)]="cadastros.cpf" name="cpf" id="cpf" placeholder="Digite aqui o seu cpf" size="70" required>
+      <div class="form-group">
+        <label for="cpf">CPF</label>
+        <input type="text" [(ngModel)]="cadastros.cpf" name="cpf" id="cpf" placeholder="Digite aqui o seu cpf" size="70"
+          required>
       </div>
 
-      <div class="form-group">   
-        <label for="email"></label>
-        <input type="email"  [(ngModel)]="cadastros.email" name="email" id="email" placeholder="email@email.com" size="70" required>
-      </div>        
-        <div class="form-group">
-            <label for="telefone"></label>
-            <input type="tel"  [(ngModel)]="cadastros.phone" name="phone" id="telefone" placeholder="Telefone" size="70" required>
-        </div>
-
-        <div class="form-group">  
-          <input type="password" [(ngModel)]="cadastros.password" name="password" placeholder="Digite aqui a sua senha" class="senha" >
-        </div>
-        <div class="form-group">  
-          <input type="password" [(ngModel)]="cadastros.confirmPassword" name="confirmPassword" placeholder="Digite sua senha novamente">
-        </div>
-        <button type="submit" (click)="createCadastro()">Adote já!</button>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" [(ngModel)]="cadastros.email" name="email" id="email" placeholder="email@email.com"
+          size="70" required>
       </div>
+      <div class="form-group">
+        <label for="telefone">Telefone</label>
+        <input type="tel" [(ngModel)]="cadastros.phone" name="phone" id="telefone" placeholder="Telefone" size="70"
+          required>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Senha</label>
+        <input type="password" [(ngModel)]="cadastros.password" name="password" placeholder="Digite aqui a sua senha"
+          size="70" class="senha" required>
+      </div>
+      <div class="form-group">
+        <label for="confirmPassword">Confirme sua senha</label>
+        <input type="password" [(ngModel)]="cadastros.confirmPassword" name="confirmPassword"
+          placeholder="Digite sua senha novamente" size="70" required>
+      </div>
+      <button type="submit" (click)="createCadastro()">Adote já!</button>
+    </div>
   </form>
 
 
 </main>
-

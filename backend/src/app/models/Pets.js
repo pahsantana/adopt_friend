@@ -6,11 +6,13 @@ class Pet extends Model{
             name: DataTypes.STRING,
             age: DataTypes.INTEGER,
             size: DataTypes.STRING,
+            gender: DataTypes.STRING,
             breed: DataTypes.STRING,
             weight: DataTypes.FLOAT,
             vaccine: DataTypes.BOOLEAN,
             castration: DataTypes.BOOLEAN,
-            microchip: DataTypes.BOOLEAN
+            microchip: DataTypes.BOOLEAN,
+            description: DataTypes.STRING,
         },{
             sequelize,
         });

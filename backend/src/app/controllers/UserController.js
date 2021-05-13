@@ -1,14 +1,18 @@
 import * as Yup from "yup";
 import User from '../models/Users';
+<<<<<<< HEAD
 import  { userId } from '../middlewares/auth'
+=======
+import { userId } from '../middlewares/auth'
+>>>>>>> d740b2dcf45c18159bafd198028af3b0e0ae239d
 
 class UserController {
 
     async index(req, res) {
-        const users = await User.findOne({where:{id: req.params.id}});
+        const users = await User.findByPk(req.userId);
 
         return res.json({
-            Name: users.name,
+            name: users.name,
             cpf: users.cpf,
             email: users.email,
             phone: users.phone
@@ -73,7 +77,7 @@ class UserController {
 
         const {email,oldPassword} = req.body;
 
-        const user = await User.findByPk(req.params.id);
+        const user = await User.findByPk(req.userId);
 
         if(email && email != user.email){
             const userExists = await User.findOne({ where: {email}});
@@ -100,10 +104,10 @@ class UserController {
 
 
     async delete(req, res){
-
         try {
             const user = await User.findByPk(req.params.id);
       
+            ({ where: { id_cliente: req.clienteId } })
             await user.destroy();
       
             return res.status(200).json({message: `Usuario ${userId} foi deletado`});
