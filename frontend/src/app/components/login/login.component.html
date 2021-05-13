@@ -33,7 +33,11 @@
     </form>
 
     <div class="alert alert-success" *ngIf="isLoggedIn">
-      Olá {{  decoded.name  }}.
+      Olá {{  decoded.name  }}, seja bem-vindx!
+
+      CPF: {{decoded.cpf}}
+      E-mail: {{decoded.email}}
+      phone: {{decoded.phone}}
     </div>
   </div>
 </div>

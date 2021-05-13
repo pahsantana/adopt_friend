@@ -23,8 +23,10 @@ class PetController{
 
     async store(req, res){
 
-        const {name, age, size, gender,breed, weight, vaccine, castration, microchip, description} = req.body;
-        let user_id=req.userId;
+        const {name, age, city, size, gender,breed, weight, vaccine, castration, microchip,url,description} = req.body;
+
+        let user_id = req.userId;
+
         const user = await User.findByPk(req.userId);
 
         if(!user){
@@ -34,6 +36,7 @@ class PetController{
          const pet = await Pet.create({
              name,
              age,
+             city,
              size,
              gender,
              breed,
@@ -41,6 +44,7 @@ class PetController{
              vaccine,
              castration,
              microchip,
+             url,
              description,
              user_id
          })
@@ -48,6 +52,7 @@ class PetController{
         return res.json({
             name,
             age,
+            city,
             size,
             gender,
             breed,
@@ -55,6 +60,7 @@ class PetController{
             vaccine,
             castration,
             microchip,
+            url,
             description
         });
     };
@@ -160,6 +166,7 @@ class PetController{
         const schema = Yup.object().shape({
             name: Yup.string().required(),
             age: Yup.number(),
+            city: Yup.string().required(),
             size: Yup.string().required(),
             gender: Yup.string().required(),
             breed: Yup.string(),
@@ -167,6 +174,7 @@ class PetController{
             vaccine: Yup.boolean(),
             castration: Yup.boolean(),
             microchip: Yup.boolean(),
+            url: Yup.string().required(),
             description: Yup.string().required(),
         });
 
@@ -176,11 +184,12 @@ class PetController{
 
         const pet = await Pet.findByPk(req.params.id);
 
-        const { name, age, size, gender, breed, weight, vaccine, castration, microchip,description } = await pet.update(req.body);
+        const { name, age, city, size, gender, breed, weight, vaccine, castration, microchip,url,description } = await pet.update(req.body);
 
         return res.json({
             name,
             age,
+            city,
             size,
             gender,
             breed,
@@ -188,6 +197,7 @@ class PetController{
             vaccine,
             castration,
             microchip,
+            url,
             description
         });
     }

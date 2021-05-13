@@ -21,7 +21,10 @@ export class DataFormService {
   create(dataForm: DataForm): Observable<DataForm> {
     return this.http.post<DataForm>(`${this.baseUrl}/users/pets`, dataForm);
   }
-  getToken(tokenStorage: TokenStorageService) {
+  getToken() {
     window.sessionStorage.getItem(USER_KEY);
+  }
+  read(): Observable<DataForm[]> {
+    return this.http.get<DataForm[]>(`${this.baseUrl}/pets`);
   }
 }

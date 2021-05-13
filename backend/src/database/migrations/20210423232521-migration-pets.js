@@ -24,6 +24,10 @@ module.exports = {
       age: {
         type: Sequelize.INTEGER,
       },
+      city: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
       size: {
         type: Sequelize.STRING,
         allowNull: false,
@@ -46,6 +50,10 @@ module.exports = {
       },
       microchip: {
         type: Sequelize.BOOLEAN,
+      },
+      url: {
+        type: Sequelize.STRING,
+        allowNull:false
       },
       description:{
         type: Sequelize.STRING,

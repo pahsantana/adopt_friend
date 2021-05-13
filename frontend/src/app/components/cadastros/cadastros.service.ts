@@ -8,12 +8,12 @@ import { Cadastros } from './cadastros.model';
   providedIn: 'root'
 })
 export class CadastrosService {
-  baseUrl = "http://localhost:8080/users"
+  baseUrl = "http://localhost:8080"
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
 
   create(cadastro: Cadastros): Observable<Cadastros> {
-    return this.http.post<Cadastros>(this.baseUrl, cadastro)
+    return this.http.post<Cadastros>(`${this.baseUrl}/users`, cadastro)
   }
 }
 

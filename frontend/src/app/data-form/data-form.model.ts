@@ -2,6 +2,7 @@ export class DataForm {
 
     id?: number;
     name: string;
+    city: string;
     age?: number;
     size: string;
     gender: string;
@@ -10,5 +11,6 @@ export class DataForm {
     vaccine?: boolean;
     castration?: boolean;
     microchip?: boolean;
+    url: string;
     description: string;
 }

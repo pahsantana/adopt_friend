@@ -17,6 +17,7 @@ export class DataFormComponent implements OnInit {
   dataForm: DataForm = {
     name: '',
     age: null,
+    city: '',
     size: '',
     gender: '',
     breed: '',
@@ -24,6 +25,7 @@ export class DataFormComponent implements OnInit {
     vaccine: false,
     castration: false,
     microchip: false,
+    url: '',
     description: ''
   }
   isLoggedIn = false;

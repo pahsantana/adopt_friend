@@ -5,6 +5,7 @@ class Pet extends Model{
         super.init({
             name: DataTypes.STRING,
             age: DataTypes.INTEGER,
+            city: DataTypes.STRING,
             size: DataTypes.STRING,
             gender: DataTypes.STRING,
             breed: DataTypes.STRING,
@@ -12,6 +13,7 @@ class Pet extends Model{
             vaccine: DataTypes.BOOLEAN,
             castration: DataTypes.BOOLEAN,
             microchip: DataTypes.BOOLEAN,
+            url: DataTypes.STRING,
             description: DataTypes.STRING,
         },{
             sequelize,
@@ -23,7 +25,6 @@ class Pet extends Model{
     static associate(models) {
         this.belongsTo(models.User, { foreignKey: 'user_id', as:'user'});
         this.belongsTo(models.File, { foreignKey: 'avatar_id', as: 'avatar_pet'}); 
-        // this.hasOne(models.Event, { foreignKey: 'event_id', as:'event'});
     }
 }
 

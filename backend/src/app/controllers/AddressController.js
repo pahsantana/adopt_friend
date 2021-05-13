@@ -5,7 +5,7 @@ class AddressController {
 
     async index(req,res){
 
-        let {name, email,address} = await User.findByPk(request.userId, {
+        let {name, email,address} = await User.findByPk(req.userId, {
 
             include: { association: 'address'}
                  
@@ -26,8 +26,7 @@ class AddressController {
     }
 
     async store(req, res) {
-        const user_id = request.userId;
-    
+
         const {uf, city, logradouro, number, complement, cep} = req.body;
     
         const address = await Address.create({

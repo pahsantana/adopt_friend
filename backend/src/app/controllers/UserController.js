@@ -103,7 +103,7 @@ class UserController {
         try {
             const user = await User.findByPk(req.params.id);
       
-            ({ where: { id_cliente: req.clienteId } })
+            ({ where: { user_id: req.userId } })
             await user.destroy();
       
             return res.status(200).json({message: `Usuario ${userId} foi deletado`});

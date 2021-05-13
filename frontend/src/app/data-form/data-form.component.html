@@ -25,7 +25,8 @@
         <div class="form-row">
           <div class="form-group col-md-4">
             <label for="Idade">Idade</label>
-            <input name="age" type="text" class="form-control" id="Idade" [(ngModel)]="dataForm.age">
+            <input name="age" type="text" class="form-control" id="Idade" [(ngModel)]="dataForm.age"
+              placeholder="Digite a idade do Pet">
           </div>
           <div class="form-group col-md-4">
             <label for="inputState">Porte</label>
@@ -45,6 +46,13 @@
               <option value="Fêmea">Fêmea</option>
             </select>
           </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-12">
+          <label for="Cidade">Cidade-UF</label>
+          <input name="city" type="text" class="form-control" id="Cidade" [(ngModel)]="dataForm.city"
+            placeholder="Digite a cidade e UF onde você se localiza">
         </div>
       </div>
 
@@ -90,16 +98,18 @@
           </select>
         </div>
       </div>
+      <div class="form-row">
+        <div class="form-group col-md-12">
+          <label for="url-image">URL imagem</label>
+          <input class="form-control" name="url-image" type="text" required id="url-image" class="form-control"
+            [(ngModel)]="dataForm.url">
+        </div>
+      </div>
       <div class="form-group">
         <label for="comment">Descrição</label>
-        <textarea name="description" class="form-control" cols="1" rows="6" id="comment"
+        <textarea name="description" class="form-control" cols="1" rows="4" id="comment"
           placeholder="Descreva mais sobre o seu pet" [(ngModel)]="dataForm.description" required></textarea>
       </div>
-
-      <div class="form-group">
-        <ngbd-modal-basic></ngbd-modal-basic>
-      </div>
-
     </div>
 
     <div class="form-group">
