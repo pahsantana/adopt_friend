@@ -40,6 +40,8 @@ import { AdocaoComponent } from './components/adocao/adocao.component';
 
 import { ModalComponent } from './components/template/modal/modal.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { EnderecoComponent } from './components/endereco/endereco.component';
+import { MeusDadosComponent } from './components/meus-dados/meus-dados.component';
 
 import { MatSelectModule } from '@angular/material/select';
 
@@ -67,6 +69,8 @@ const components = [
 @NgModule({
   declarations: [
     ...components,
+    EnderecoComponent,
+    MeusDadosComponent,
 
   ],
   imports: [
