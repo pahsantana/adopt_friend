@@ -7,17 +7,17 @@
     <div>
         <section>           
             <form>
-                <div class="container-config">
-
-                    <mat-icon class="config">manage_accounts</mat-icon>
-
-                </div>
-                <div class="dados-usuario">
-                    <h3>Dados usuário</h3>
+              <div class="dados-usuario">
+                  <div class="container-config">
+  
+                      <mat-icon class="config">manage_accounts</mat-icon>
+  
+                  </div>
+                    <h3>Alterar dados</h3>
                   <div class="form-group">
-                    <label for="nome">Nome Completo/Nome social</label>
+                    <label for="nome">Nome Completo</label>
                     <input type="text"id="nome" name="name"
-                      placeholder="Digite seu nome completo/Nome Social" size="70" maxlength="50" required>
+                      placeholder="Digite seu nome completo" size="70" maxlength="50" required>
                   </div>
             
                   <div class="form-group">
@@ -38,14 +38,19 @@
                   </div>
             
                   <div class="form-group">
-                    <label for="password">Senha</label>
+                    <label for="password">Senha Atual</label>
                     <input type="password" name="password" placeholder="Digite aqui a sua senha"
                       size="70" class="senha" required>
                   </div>
                   <div class="form-group">
-                    <label for="confirmPassword">Confirme sua senha</label>
+                    <label for="password">Nova senha</label>
+                    <input type="password" name="password" placeholder="Digite sua senha atual"
+                      size="70" class="senha" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="confirmPassword">Confirmação de senha</label>
                     <input type="password" name="confirmPassword"
-                      placeholder="Digite sua senha novamente" size="70" required>
+                      placeholder="Digite a senha novamente" size="70" required>
                   </div>
                   <div class="form-group button">
                     <button type="button" class="btn btn-outline-dark">Atualizar</button>

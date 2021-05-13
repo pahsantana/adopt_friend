@@ -1,0 +1,118 @@
+<h1>Meus Dados</h1>
+<main>
+    <div class="pet">
+       <p>Pet name</p>
+       <mat-icon>pets</mat-icon>
+    </div>
+    <div>
+        <section>           
+            <form>
+              <div class="dados-usuario">
+                  <div class="container-config">
+  
+                      <mat-icon class="config">manage_accounts</mat-icon>
+  
+                  </div>
+                    <h3>Alterar dados</h3>
+                  <div class="form-group">
+                    <label for="name">Nome do pet</label>
+                    <input type="text"id="name" name="name"
+                      placeholder="Digite o nome do pet" size="70" maxlength="50">
+                  </div>
+            
+                  <div class="form-group">
+                    <label for="age">Idade</label>
+                    <input type="number"  name="age" id="age" placeholder="Digite a idade do pet" size="70">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="city">Cidade/UF</label>
+                    <input type="text"id="city" name="city"
+                      placeholder="Digite sua cidade/UF" size="70" maxlength="50">
+                  </div>
+            
+                  <div class="form-group">
+                    <label for="size">Porte</label>
+                    <select class="form-control" name="size" id="inputState" class="form-control">
+                      <option selected disabled>Selecione uma opção</option>
+                      <option value="Pequeno">Pequeno</option>
+                      <option value="Médio">Médio</option>
+                      <option value="Grande">Grande</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="gender">Genero</label>
+                    <select class="form-control" name="gender"  id="inputState" class="form-control">
+                    <option selected disabled>Selecione uma opção</option>
+                    <option value="Macho">Macho</option>
+                    <option value="Fêmea">Fêmea</option>
+                  </select>
+                  </div>
+            
+                  <div class="form-group">
+                    <label for="breed">Raça</label>
+                    <input type="text" name="breed" placeholder="Digite a raça do seu pet."
+                      size="70">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="weight">Peso</label>
+                    <input type="password" name="weight" placeholder="Digite o peso(Kg) do seu pet."
+                      size="70">
+                  </div>
+                  <div class="form-group">
+                    <label for="inputState">Vacina</label>
+                        <select name="vaccine" id="inputState" class="form-control" > <!--[(ngModel)]="dataForm.vaccine"-->
+                          <option selected>Selecione uma opção</option>
+                          <option value="true">Sim</option>
+                          <option value="false">Não</option>
+                        </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputState">Castração</label>
+                        <select name="castration" id="inputState" class="form-control" > <!--[(ngModel)]="dataForm.vaccine"-->
+                          <option selected>Selecione uma opção</option>
+                          <option value="true">Sim</option>
+                          <option value="false">Não</option>
+                        </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputState">Microchip</label>
+                        <select name="Microchip" id="inputState" class="form-control" > <!--[(ngModel)]="dataForm.vaccine"-->
+                          <option selected>Selecione uma opção</option>
+                          <option value="true">Sim</option>
+                          <option value="false">Não</option>
+                        </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="image">Url imagem</label>
+                    <input type="text" name="image" placeholder="Insira a url da imagem de seu pet"
+                      size="70">
+                  </div>
+
+                  <!-- <div class="form-group">
+                    <label for="anexos">Anexos</label>
+                        <input type="file" name="anexos" id="anexos">
+                  </div> -->
+
+                  <div class="form-group">
+                    <label for="comment">Descrição</label>
+        <textarea name="description" class="form-control" cols="38" rows="6" id="comment"
+          placeholder="Descreva mais sobre o seu pet"></textarea>
+                  </div>
+                  <div class="form-group button">
+                    <button type="button" class="btn btn-outline-dark">Atualizar</button>
+                  </div>
+                  <div class="form-group button">
+                    <button type="button" id="button-delete" class="btn btn-outline-dark">Deletar Pet</button>
+                  </div>
+                </div>
+              </form>
+
+              <!-- endereco -->
+            
+           
+          </section>
+    </div>
+</main>

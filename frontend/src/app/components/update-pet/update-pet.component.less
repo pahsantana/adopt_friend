@@ -11,10 +11,22 @@ h1{
     font-family: bangers, sans-serif;
 }
 
-mat-icon{
+.pet{
+    width: 105px;
+    display: flex;
+    flex-direction: column;
 
-    font-size: 110px;    
+    mat-icon{
+        font-size: 110px;
+        width: 120px; 
+    }
+    p{
+        display: flex;
+        justify-content: center;
+    }
 }
+
+
 
 .container-config{
     display: flex;
@@ -51,16 +63,29 @@ main {
       display: flex;
       flex-direction: column;    
 
-      input {
+      input, select,{
+        background-color: white;
         width: 350px;
         padding: .375rem .75rem;
         border-radius: 5px;
         border: 1px solid gray;
+        font-weight: lighter;
+        font-family: 'IBM Plex Sans', sans-serif;
       }
     }
 
   }
 }
+
+select{
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: small;
+}
+
+input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
 
 .btn-outline-dark:hover{
     background-color:#380070 ;
