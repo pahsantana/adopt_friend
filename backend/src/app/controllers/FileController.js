@@ -12,6 +12,14 @@ class FileController {
 
         return response.json(file);
     }
+
+    async retrive(request, response) {
+        const { filename: path } = request.file;
+    
+        const file = await File.findOne({
+          path,
+        });
+      }
 }
 
 export default new FileController();

@@ -43,6 +43,7 @@ export class DataFormComponent implements OnInit {
   createCadastroPet(): void {
     this.dataFormService.create(this.dataForm).subscribe(() => {
       this.router.navigate(['/'])
+      this.dataFormService.showMessage('Cadastro de pet concluído com sucesso')
     })
   }
 }
