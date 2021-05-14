@@ -1,15 +1,14 @@
 <main>
-  <div class="text">
-    <h1><strong> Cadastrar um pet</strong></h1>
-    <p>Para cadastrar um pet, precisamos saber um pouco mais de você, pois do ponto de vista do animal, ser abandonado
-      pelo amigo é muito doloroso, e eles já sofreram isso uma vez e não queremos que isso se repita. Eles não merecem
-      ser tratados com desprezo.
+  <div class="title">
 
-      Sendo assim, abaixo, clique no botão de Cadastro. Ele deverá ser totalmente preenchido e o nome do cão de
-      interesse citado. Após análise, entraremos em contato com você.
-    </p>
+    <h1> CADASTRAR UM PET</h1>
+    <p>Para cadastrar um pet para doação, é necessário informar o nome do pet, idade, sexo, porte e raça, além disso gostariamos de saber se estão estão devidamentes vacinados, castrados, vermifugados e uma breve descrição detalhada
+      das caracteristicas particulares que sabemos que só seu animalzinho  tem.
+        Desejamos boa sorte durante todo o processo de doação, que seu animalzinho encontre um lar que o ame,
+        respeite.
+  </p>
+  <h2> Dados pet </h2>
   </div>
-  <h1><strong> Dados do Pet</strong> </h1>
 
   <form>
 
@@ -107,16 +106,16 @@
       </div>
       <div class="form-group">
         <label for="comment">Descrição</label>
-        <textarea name="description" class="form-control" cols="1" rows="4" id="comment"
+        <textarea name="description" class="form-control" cols="150" rows="4" id="comment"
           placeholder="Descreva mais sobre o seu pet" [(ngModel)]="dataForm.description" required></textarea>
       </div>
-    </div>
+   
 
     <div class="form-group">
 
-      <button type="submit" (click)="createCadastroPet()" class="btn btn-outline-dark">Cadastrar pet</button>
+      <button type="submit" (click)="createCadastroPet()" class="btn btn-dark">Cadastrar pet</button>
     </div>
-
+ </div>
   </form>
 
 </main>
