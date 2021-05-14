@@ -1,17 +1,19 @@
 <div class="col-md-12">
   <div class="card card-container">
-    <img id="profile-img" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" class="profile-img-card" />
+    <div class="icon">
+    <mat-icon>account_circle</mat-icon>
+    </div>
     <form *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
       <div class="form-group">
         <label for="email">E-mail</label>
-        <input type="text" class="form-control" name="email" [(ngModel)]="form.email" required #email="ngModel" />
+        <input type="text" class="form-control" placeholder="Digite seu email" name="email" [(ngModel)]="form.email" required #email="ngModel" />
         <div class="alert alert-danger" role="alert" *ngIf="f.submitted">
           E-mail is required!
         </div>
       </div>
       <div class="form-group">
         <label for="password">Password</label>
-        <input type="password" class="form-control" name="password" [(ngModel)]="form.password" required minlength="6"
+        <input type="password" class="form-control" placeholder="Digite sua senha" name="password" [(ngModel)]="form.password" required minlength="6"
           #password="ngModel" />
         <div class="alert alert-danger" role="alert" *ngIf="f.submitted && password.invalid">
           <div *ngIf="password.errors.required">Password is required</div>
@@ -21,7 +23,7 @@
         </div>
       </div>
       <div class="form-group">
-        <button class="btn btn-primary btn-block">
+        <button class="btn btn-dark btn-block">
           Login
         </button>
       </div>
@@ -32,12 +34,35 @@
       </div>
     </form>
 
-    <div class="alert alert-success" *ngIf="isLoggedIn">
-      Olá {{  decoded.name  }}, seja bem-vindx!
 
-      CPF: {{decoded.cpf}}
-      E-mail: {{decoded.email}}
-      phone: {{decoded.phone}}
+    <div *ngIf="isLoggedIn" class="user-name">
+      <h4>
+        Olá {{  decoded.name  }}, seja bem-vindx!
+      </h4>
+      
+    </div>
+    <div class="alert alert-success" *ngIf="isLoggedIn">
+      <h3>Dados Usuário</h3>
+      <section>
+        <div class="user-data">
+          <p>Nome: {{  decoded.name  }}</p>
+        </div>
+        <div class="user-data">
+          <p>CPF: {{decoded.cpf}}</p>
+        </div>
+        <div class="user-data">
+          <p>
+            E-mail: {{decoded.email}}
+          </p>
+        </div>
+        <div class="user-data">
+          <p>
+            phone: {{decoded.phone}}
+          </p>
+        </div>
+
+      </section>
+     
     </div>
   </div>
 </div>

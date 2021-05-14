@@ -9,7 +9,7 @@ label {
 }
 
 .card {
-  background-color: #f7f7f7;
+  background-color: white;
   padding: 20px 25px 30px;
   margin: 0 auto 25px;
   margin-top: 50px;
@@ -29,4 +29,59 @@ label {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
+}
+
+
+.btn-dark{
+  background-color: var(--text-primary-color);
+  border: none;
+  font-weight: 700px;
+}
+
+.btn-dark:hover{
+    transition: 0.5s;
+    box-shadow: 2px 2px 7px 0 black;
+}
+
+.btn-dark:active{
+    box-shadow: none;
+    transition: 0.5s;
+}
+
+.alert-success{
+  background-color: white;
+  border:none;
+}
+
+.icon{
+  display: flex;
+  justify-content: center;
+  height: 110px;
+  width: 317px;
+
+  mat-icon{
+    font-size: 110px;
+    width: 109px;
+  }
+}
+h3{
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+h4{
+  display: flex;
+  justify-content: center;
+  background-color: #0f51325e;
+}
+.user-data{
+  display: flex;
+  align-content: center;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px 0;
+  margin: 10px 5px;
+  p{
+    margin: 0 0 0 5px;
+  }
 }

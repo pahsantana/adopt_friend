@@ -1,11 +1,27 @@
 main {
   padding-top: 50px;
   min-height: 80vh;
-  background-color: var(--light-primary-color);
+  background-color: #dfdfdf;
+
+  .video {
+    display: flex;
+    justify-content: center;
+    padding: 50px 0;
+
+
+    video {
+      width: 80%;
+      box-shadow: 0px 1px 8px black;
+    }
+  }
 }
 
 p {
   text-align: center;
+}
+
+.container {
+  margin-bottom: 50px;
 }
 
 section.plataforma,
@@ -16,7 +32,8 @@ section.adocao {
     justify-content: space-around;
     align-items: center;
   }
-  .texto{
+
+  .texto {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -43,9 +60,10 @@ section.plataforma {
       border-radius: 5px;
       box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24);
     }
-    button:hover{
-    
-        box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+
+    button:hover {
+      transition: 0.5s;
+      box-shadow: 2px 2px 7px 0 black;
     }
 
     // button:active{
@@ -76,43 +94,21 @@ section.adocao {
 
 section.plataforma {
 
-    .container {
-      .texto {
-  
-        font-weight: 700;
-        font-size: 26px;
-        text-align: left;
-        max-width: 389px;
-        line-height: 29px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-self: center;
-  
-        button {
-          margin: 10px 0;
-          background-color: var(--text-primary-color);
-          border: 1px solid;
-          border-radius: 8px;
-          color: white;
-          padding: 15px 32px;
-          text-align: center;
-          text-decoration: none;
-          transition-duration: 0.4s;
-          font-size: 16px;
-          display: block;
-          margin-top: 40px;
-          font-weight: 700;
-        }
-      }
-    }
-  }
+  .container {
+    .texto {
 
-  section.cadastro {
+      font-weight: 700;
+      font-size: 26px;
+      text-align: left;
+      max-width: 389px;
+      line-height: 29px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-self: center;
 
-    .container {
       button {
-  
+        margin: 10px 0;
         background-color: var(--text-primary-color);
         border: 1px solid;
         border-radius: 8px;
@@ -124,29 +120,53 @@ section.plataforma {
         font-size: 16px;
         display: block;
         margin-top: 40px;
-        font-weight: 700;
-      }
-      h2 {
-    
-        font-size: 31px;
-        font-weight: 700;
-        text-align: center;
-      }
-    }
-  }
-
-  section.adocao {
-
-    .container {
-      img {
-  
-        width: 20vw;
-        height: 50vh;
-        margin: 10px 70px;
+        font-weight: 400;
         border: 1px solid black;
-        border-radius: 5px;
-        box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
       }
     }
   }
-  
+}
+
+section.cadastro {
+
+  .container {
+    button {
+
+      background-color: var(--text-primary-color);
+      border: 1px solid;
+      border-radius: 8px;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      transition-duration: 0.4s;
+      font-size: 16px;
+      display: block;
+      margin-top: 40px;
+      font-weight: 400;
+      border: 1px solid black;
+    }
+
+    h2 {
+
+      font-size: 31px;
+      font-weight: 700;
+      text-align: center;
+    }
+  }
+}
+
+section.adocao {
+
+  .container {
+    img {
+
+      width: 20vw;
+      height: 50vh;
+      margin: 10px 70px;
+      border: 1px solid black;
+      border-radius: 5px;
+      box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    }
+  }
+}
