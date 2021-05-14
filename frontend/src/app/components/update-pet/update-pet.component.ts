@@ -41,7 +41,6 @@ export class UpdatePetComponent implements OnInit {
       }
     })
   }
-
   updatePet(): void {
     this.dataFormService.update(this.dataForm).subscribe(() => {
       this.router.navigate(["/pets"])
@@ -54,7 +53,6 @@ export class UpdatePetComponent implements OnInit {
       this.router.navigate(["/pets"]);
     })
   }
-
 
   getUserById(id: number): void {
     this.dataFormService.getUserById(id).subscribe(user => {
