@@ -1,11 +1,12 @@
 <div class="background">
   <mat-card class="example-card">
     <mat-card-header class="image-header">
-      <mat-card-title>Bob</mat-card-title>
+      <mat-card-title>{{pet.name}}</mat-card-title>
     </mat-card-header>
-    
+
     <mat-card-content class="infos">
-      <img mat-card-image src="assets/img/ilustra-card-pet1.jpg" alt="cachorro bob">
+
+      <img mat-card-image src="{{pet.url}}" alt="Foto do pet {{pet.name}} da raça {{pet.breed}}">
       
       
         <div class="container">
@@ -15,7 +16,7 @@
             
               <dl class="dl-horizontal">
                  
-                <dd>Nome do Atual dono</dd>
+                <dd>Nome do Atual dono: {{user.name}} </dd>
                 
                 <dt>
                  
@@ -23,43 +24,44 @@
                 <dd> 
                   <div class="contato">
                   <mat-icon>phone</mat-icon>
-                  <a href="tel:+551198173848324" target="_blank">
-                    Telefone
-                  </a>
+                  <a [href]="phone" target="_blank">
+                  Telefone
+                </a>
                 </div>
                   <div class="container-links contato">
                     <span><img class="logo" src="../../../assets/img/icones/whatsapp.svg" alt=""></span>
-                    <a id="whatsapp" href="https://api.whatsapp.com/send?phone=5511989713452&text=Ol%C3%A1%2C%20tudo%20bem%3F%20Gostaria%20de%20conhecer%20o%20pet%20anunciado"
-                    target="_blank">(WhatsApp)</a>
+                    <a id="whatsapp" [href]="whatsapp" target="_blank">(WhatsApp)</a>
                   </div>
                   
                 </dd>
                 <div class="contato">
                   <mat-icon>email</mat-icon>
-                  <a href="mailto:adopt_pet@gmail.com" target="_blank">
-                    E-mail
-                  </a>
+                  <a [href]="email" target="_blank">
+                E-mail
+              </a>
 
                 </div>
+
             </dl>
-            </div>
-            
-            </div>
-            
+          </div>
+
+        </div>
+
       </div>
     </mat-card-content>
 
     <mat-card-content>
       <div class="pet-description">
         <br>
-       
-    <ul style="list-style-type:none;">
-      <li>Idade:</li>
-      <li>Porte</li>
-      <li>Raça:<li>
-     <li>Vacina:</li>
-  </ul>  
-</div>
+
+        <ul style="list-style-type:none;">
+          <li>Idade:{{pet.age}}</li>
+          <li>Cidade:{{pet.city}}</li>
+          <li>Porte:{{pet.size}}</li>
+          <li>Gênero:{{pet.gender}}</li>
+          <li>Descrição:{{ pet.description }}</li>
+        </ul>
+      </div>
     </mat-card-content>
     <div class="button">
       <button class="btn btn-dark btn-block">
@@ -67,6 +69,6 @@
       </button>
     </div>
   </mat-card>
- 
+
 
 </div>

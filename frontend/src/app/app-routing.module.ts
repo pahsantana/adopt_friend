@@ -11,7 +11,7 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 import { LoginComponent } from './components/login/login.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { BoardUserComponent } from './components/board-user/board-user.component';
-import {EnderecoComponent} from './components/endereco/endereco.component';
+import { EnderecoComponent } from './components/endereco/endereco.component';
 import { MeusDadosComponent } from './components/meus-dados/meus-dados.component';
 import { UpdatePetComponent } from './components/update-pet/update-pet.component';
 
@@ -30,7 +30,7 @@ export const rotas: Routes = [
   { path: 'user', component: BoardUserComponent },
   { path: 'adocao', component: AdocaoComponent },
   { path: 'meus-dados', component: MeusDadosComponent },
-  { path: 'update-pet', component: UpdatePetComponent },
+  { path: 'pets/:id', component: UpdatePetComponent },
   { path: '**', component: NotFoundComponent },
 ]
 

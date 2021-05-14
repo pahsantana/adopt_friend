@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { DataFormService } from './../../data-form/data-form.service';
 import { DataForm } from './../../data-form/data-form.model';
 import jwt_decode from 'jwt-decode';
@@ -14,7 +15,7 @@ export class SearchPetsPageComponent implements OnInit {
 
 
   pets: DataForm[]
-  constructor(private dataFormService: DataFormService, private tokenStorage: TokenStorageService) { }
+  constructor(private dataFormService: DataFormService, private tokenStorage: TokenStorageService, private router: Router) { }
 
   isLoggedIn = false;
   currentUser: any;
@@ -30,5 +31,10 @@ export class SearchPetsPageComponent implements OnInit {
         this.pets = pets
       })
     }
+  }
+
+  VerMais(pet: DataForm): void {
+    this.dataFormService.pet.next(pet)
+    this.router.navigate(['/adocao'])
   }
 }

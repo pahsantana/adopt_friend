@@ -1,69 +1,66 @@
 <h1>Meus Dados</h1>
 <main>
-    <div class="usuario">
-       <p>Olá, usiario-name</p>
-       <mat-icon>account_circle</mat-icon>
-    </div>
-    <div>
-        <section>           
-            <form>
-              <div class="dados-usuario">
-                  <div class="container-config">
-  
-                      <mat-icon class="config">manage_accounts</mat-icon>
-  
-                  </div>
-                    <h3>Alterar dados</h3>
-                  <div class="form-group">
-                    <label for="nome">Nome Completo</label>
-                    <input type="text"id="nome" name="name"
-                      placeholder="Digite seu nome completo" size="70" maxlength="50" required>
-                  </div>
-            
-                  <div class="form-group">
-                    <label for="cpf">CPF</label>
-                    <input type="text"  name="cpf" id="cpf" placeholder="Digite aqui o seu cpf" size="70" 
-                      required><!--[(ngModel)]="cadastros.cpf"-->
-                  </div>
-            
-                  <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" name="email" id="email" placeholder="email@email.com"
-                      size="70" required>
-                  </div>
-                  <div class="form-group">
-                    <label for="telefone">Telefone</label>
-                    <input type="tel" name="phone" id="telefone" placeholder="Telefone" size="70"
-                      required>
-                  </div>
-            
-                  <div class="form-group">
-                    <label for="password">Senha Atual</label>
-                    <input type="password" name="password" placeholder="Digite aqui a sua senha"
-                      size="70" class="senha" required>
-                  </div>
-                  <div class="form-group">
-                    <label for="password">Nova senha</label>
-                    <input type="password" name="password" placeholder="Digite sua senha atual"
-                      size="70" class="senha" required>
-                  </div>
-                  <div class="form-group">
-                    <label for="confirmPassword">Confirmação de senha</label>
-                    <input type="password" name="confirmPassword"
-                      placeholder="Digite a senha novamente" size="70" required>
-                  </div>
-                  <div class="form-group button">
-                    <button type="button" class="btn btn-outline-dark">Atualizar</button>
-                  </div>
-                  <div class="form-group button">
-                    <button type="button" id="button-delete" class="btn btn-outline-dark">Apagar conta</button>
-                  </div>
-                </div>
-              </form>
+  <div class="usuario">
+    <p>Olá, {{decoded.name}}</p>
+    <mat-icon>account_circle</mat-icon>
+  </div>
+  <div>
+    <section>
+      <form>
+        <div class="dados-usuario">
+          <div class="container-config">
 
-              <!-- endereco -->
-            
-           
-          </section>
-    </div>
+            <mat-icon class="config">manage_accounts</mat-icon>
+
+          </div>
+          <h3>Alterar dados</h3>
+          <div class="form-group">
+            <label for="nome">Nome Completo</label>
+            <input type="text" id="nome" name="name" placeholder="Digite seu nome completo" size="70" maxlength="50"
+              required>
+          </div>
+
+          <div class="form-group">
+            <label for="cpf">CPF</label>
+            <input type="text" name="cpf" id="cpf" placeholder="Digite aqui o seu cpf" size="70" required>
+            <!--[(ngModel)]="cadastros.cpf"-->
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="email@email.com" size="70" required>
+          </div>
+          <div class="form-group">
+            <label for="telefone">Telefone</label>
+            <input type="tel" name="phone" id="telefone" placeholder="Telefone" size="70" required>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Senha Atual</label>
+            <input type="password" name="password" placeholder="Digite aqui a sua senha" size="70" class="senha"
+              required>
+          </div>
+          <div class="form-group">
+            <label for="password">Nova senha</label>
+            <input type="password" name="password" placeholder="Digite sua senha atual" size="70" class="senha"
+              required>
+          </div>
+          <div class="form-group">
+            <label for="confirmPassword">Confirmação de senha</label>
+            <input type="password" name="confirmPassword" placeholder="Digite a senha novamente" size="70" required>
+          </div>
+          <div class="form-group button">
+            <button type="button" class="btn btn-outline-dark">Atualizar</button>
+          </div>
+          <div class="form-group button">
+            <button type="button" id="button-delete" class="btn btn-outline-dark">Apagar conta</button>
+          </div>
+        </div>
+      </form>
+
+      <!-- endereco -->
+
+
+    </section>
+  </div>
 </main>
