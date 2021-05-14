@@ -15,7 +15,7 @@ export class MeusDadosComponent implements OnInit {
   isLoggedIn = false;
   currentUser: any;
   decoded: any;
-  cadastros: MeusDados;
+  cadastros = new MeusDados();
 
   constructor(private tokenStorage: TokenStorageService, private cadastrosService: CadastrosService, private router: Router, private route: ActivatedRoute) { }
 
@@ -25,16 +25,12 @@ export class MeusDadosComponent implements OnInit {
       this.currentUser = this.tokenStorage.getUser();
       var tokenDec = this.currentUser.token
       this.decoded = jwt_decode(tokenDec);
-      // const id = this.route.snapshot.paramMap.get('id')
-      // this.cadastrosService.readById(id).subscribe(cadastros => {
-      //   this.cadastros = cadastros
-      // });
     }
   }
   updateUser(): void {
     this.cadastrosService.update(this.cadastros).subscribe(() => {
-      // this.logout();
-      // this.router.navigate(["/login"])
+      this.logout();
+      this.router.navigate(["/login"])
       this.cadastrosService.showMessage('Usuário alterado com sucesso');
     })
   }
