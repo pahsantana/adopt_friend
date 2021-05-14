@@ -6,19 +6,15 @@
     <nav>
       <ul *ngIf="!isLoggedIn">
         <li><a routerLink="/quem-somos">Quem somos</a></li>
-        <li><a>Contatos</a></li>
         <li><a routerLink="/login">Login</a></li>
         <li><a routerLink="/cadastros">Cadastre-se</a></li>
       </ul>
       <ul *ngIf="isLoggedIn">
+        
         <li class="nav-item">
-          <a href="/user" class="nav-link" *ngIf="isLoggedIn" routerLink="user">User</a>
-        </li>
-        <li class="nav-item">
-          <a href="/profile" class="nav-link" routerLink="profile">Profile</a>
-        </li>
-        <li class="nav-item">
-          <a href class="nav-link" (click)="logout()">LogOut</a>
+          <mat-icon class="nav-link" (click)="logout()">
+            logout
+            </mat-icon>
         </li>
         <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
           <mat-icon>menu</mat-icon>
