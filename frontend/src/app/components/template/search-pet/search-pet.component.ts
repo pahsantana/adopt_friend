@@ -1,4 +1,6 @@
+import { DataFormService } from './../../../data-form/data-form.service';
 import { Component, OnInit } from '@angular/core';
+import { DataForm } from 'src/app/data-form/data-form.model';
 
 @Component({
   selector: 'app-search-pet',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchPetComponent implements OnInit {
 
-  constructor() { }
+  size = '';
+  dataForms?: DataForm[];
+
+  constructor(private dataForm: DataForm, private dataFormService: DataFormService) { }
+
 
   ngOnInit(): void {
+  }
+
+  searchSize(): void {
+    this.dataFormService.findBySize(this.size)
+      .subscribe(
+        (data) => {
+          this.dataForms = data;
+          console.log(data);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
   }
 
 }

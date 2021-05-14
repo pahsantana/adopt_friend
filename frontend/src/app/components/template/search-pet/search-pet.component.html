@@ -1,33 +1,33 @@
 <nav class="search-pet">
-    <h1>Amiguinhos cadastrados</h1>
+  <h1>Amiguinhos cadastrados</h1>
 
-    <div id="container">
+  <div id="container">
 
-        <div>
-            <a>
-                <img  src="assets/img/search-logo.svg" alt="">
-            </a>
-            <input type="text" name="search-pet" placeholder="Pesquise pelo porte do seu amiguinho">
-        </div>
-    
-        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-            <mat-icon>filter_alt</mat-icon>
-          </button>
-          <mat-menu #menu="matMenu">
-            <button  routerLink="/meus-dados" mat-menu-item>
-                <img class="icon-filter" src="../../.././../assets/img/icones/syringe.svg" alt="">
-              <span>Vacinados</span>
-            </button>
-            <button routerLink="/data-form" mat-menu-item>
-              <img class="icon-filter" src="../../.././../assets/img/icones/veterinary.svg" alt="">
-              <span>Castrados</span>
-            </button>
-            <button routerLink="/pets" mat-menu-item>
-              <img class="icon-filter" src="../../.././../assets/img/icones/dog.svg" alt="">
-              <span>Com Microchip</span>
-            </button>
-          </mat-menu>
-
+    <div>
+      <a>
+        <img src="assets/img/search-logo.svg" alt="">
+      </a>
+      <input type="text" name="search-pet" placeholder="Pesquise pelo porte do seu amiguinho">
     </div>
-    
+
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+      <mat-icon>filter_alt</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button routerLink="/meus-dados" mat-menu-item>
+        <img class="icon-filter" src="../../.././../assets/img/icones/syringe.svg" alt="">
+        <span>Vacinados</span>
+      </button>
+      <button routerLink="/data-form" mat-menu-item>
+        <img class="icon-filter" src="../../.././../assets/img/icones/veterinary.svg" alt="">
+        <span>Castrados</span>
+      </button>
+      <button routerLink="/pets" mat-menu-item>
+        <img class="icon-filter" src="../../.././../assets/img/icones/dog.svg" alt="">
+        <span>Com Microchip</span>
+      </button>
+    </mat-menu>
+
+  </div>
+
 </nav>

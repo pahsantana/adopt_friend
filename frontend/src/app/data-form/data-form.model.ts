@@ -25,9 +25,9 @@ export interface IDataForm {
     size: string,
     gender: string,
     breed?: string;
-    weight?: number; // ?
-    vaccine?: boolean; // ?
-    castration?: boolean; // ?
+    weight?: number; 
+    vaccine?: boolean; 
+    castration?: boolean;
     microchip?: boolean;
     url: string;
     description: string;

@@ -57,4 +57,8 @@ export class DataFormService {
     })
   }
 
+  findBySize(size: string): Observable<DataForm[]>{
+    return this.http.get<DataForm[]>(`${this.baseUrl}/size?size=${size}`);
+  }
+
 }
