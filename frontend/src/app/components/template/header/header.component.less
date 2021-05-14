@@ -17,9 +17,10 @@ header {
 
     .logo {
       img {
-        width: 17vw;
+        width: 10vw;
         height: 14vh;
         margin-top: 5px;
+        animation: aparecer 2s 1;
       }
     }
 
@@ -29,6 +30,7 @@ header {
       li {
         display: inline-block;
         padding: 10px;
+        margin-right: 20px;
 
         a {
           text-decoration: none;
@@ -54,6 +56,31 @@ header {
 
     }
   }
+}
+
+@keyframes aparecer {
+      0% {
+        opacity: 0;
+    }
+
+    30% {
+      opacity: 0.3;
+    }
+
+    50% {
+      opacity: 0.5;
+    }
+    60% {
+      opacity: 0.6;
+    }
+    
+    80% {
+      opacity: 0.8;
+    }
+
+    100% {
+      opacity: 1;
+    }
 }
 
 .mat-icon {

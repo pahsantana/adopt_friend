@@ -1,77 +1,60 @@
 .how-we-are {
-    padding-top: 80px;
-    background-color: #EEEEEE;
+  padding-top: 80px;
+  background-color: #EEEEEE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  &__title {
+    margin-bottom: 40px;
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
-    &__title {
-        margin-bottom: 60px;
-        > p {
-            font-family: 'Lobster Two', cursive;
-            text-transform: uppercase;
-            font-weight: 600;   
-            font-size: 22px;
-            text-align: center;
-        }
-        &--no-margin-bottom{
-            margin-bottom: 0px;
-        }
+    align-items: center;
+
+    >p {
+      font-family: 'Lobster Two', cursive;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 22px;
+      text-align: center;
     }
 
-    &__description {
-        > p {
-            font-family:'IBM Plex Sans', sans-serif;
-            font-size: 20px;
-            text-align: center;
-        }
-        &--margin-bottom{
-            margin: 0 0 30px 0;
-        }
+    &--no-margin-bottom {
+      margin-bottom: 0px;
     }
+  }
+
+  &__description {
+    >p {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 20px;
+      text-align: center;
+    }
+
+    &--margin-bottom {
+      margin: 0 0 30px 0;
+    }
+  }
+
+
+}
+
+.icon {
+    margin-bottom: 10px;
+  img {
+
+    width: 60px;
+    height: 60px;
+  }
 }
 
 .grid {
-    display: grid;
-    gap: 30px;
-    max-width: 50%;
+  display: grid;
+  gap: 30px;
+  max-width: 50%;
 }
 
 .bold {
-    font-weight: 600;
+  font-weight: 600;
 }
-
-
-// .grid {
-//     display: grid;
-//     &__container-1 {
-//         background-color: red;
-//         &:extend(.common);
-//     }
-//     &__container-2 {
-//         background-color: blue;
-//         &:extend(.common);
-//         &--modificadores {}
-//     }
-//     &__container-3 {
-//         background-color: green;
-//         &:extend(.common);
-//     }
-//     &__container-4 {
-//         background-color: purple;
-//         &:extend(.common);
-//     }
-//     &__container-5 {
-//         background-color: orange;
-//         &:extend(.common);
-//     }
-// }
-
-// .flex {
-//     display: flex;
-// }
-
-// .common {
-//     width: 100px;
-//     height: 100px;
-// }

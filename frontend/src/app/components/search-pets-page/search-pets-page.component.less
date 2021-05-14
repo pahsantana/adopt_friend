@@ -2,7 +2,8 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  background-color: skyblue;
+  background-color:  #eee;
+  min-height: 49.4vh;
 
   section {
     margin: 50px 0;
@@ -10,6 +11,48 @@ main {
     flex-wrap: wrap;
     justify-content: space-around;
   }
+}
+
+.mat-card-actions:not(#button-ver-mais){
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-top: 0;
+  padding: 0px 1px 8px 0px;
+}
+
+.button-ver-mais {
+  color: white;
+  padding: 6px 17px;
+  border: 1px solid black;
+  border-radius: 2px;
+}
+
+button:hover {
+
+  box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.24), 0 7px 20px 0 rgba(0, 0, 0, 0.19);
+  transition-duration: 0.4s;
+}
+
+button:active {
+  box-shadow: none;
+  transition-duration: 0.4s;
+}
+
+.buttons{
+  width: 320px;
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+}
+
+.icons{
+  font-size: 30px;
+}
+
+#close{
+  font-weight: bolder;
+  color: red;
 }
 
 
@@ -53,28 +96,15 @@ main {
     }
   }
 
-  mat-card-actions {
-    .button-ver-mais {
-      background-color: #380070;
-      color: white;
-      padding: 6px 17px;
-      border: 1px solid black;
-      border-radius: 2px;
-    }
-
-    button:hover {
-
-      box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.24), 0 7px 20px 0 rgba(0, 0, 0, 0.19);
-      transition-duration: 0.4s;
-    }
-
-    button:active {
-      box-shadow: none;
-      transition-duration: 0.4s;
-    }
+  .buttons{
+    display: flex;
   }
+  
+  
+
 
   img {
     height: 30vh;
+   }
   }
 }
