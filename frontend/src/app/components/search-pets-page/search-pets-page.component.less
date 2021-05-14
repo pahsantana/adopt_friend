@@ -46,10 +46,23 @@ button:active {
   align-content: center;
 }
 
+@keyframes animation-icon {
+  0%{
+      transform: translateY(0);
+  }
+
+  30%{
+      transform: translateY(-3px);
+  }
+}
 
 
 .icons{
   font-size: 30px;
+}
+
+.icons:hover{
+  animation: animation-icon 1s 1;
 }
 
 #close{

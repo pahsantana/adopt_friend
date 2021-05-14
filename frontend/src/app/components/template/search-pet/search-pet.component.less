@@ -1,40 +1,83 @@
 .search-pet {
-    background-color: var(--light-primary-color);
-    padding: 30px 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #fa7f7252;
+  background-color: var(--light-primary-color);
+  padding: 30px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fa7f7252;
 }
 
 .search-pet h1 {
-    margin: 0;
-    padding: 0;
-    font-family: 'Bangers', sans-serif;
-    font-size: 3rem;
+  margin: 0;
+  padding: 0;
+  font-family: 'Bangers', sans-serif;
+  font-size: 3rem;
 }
 
 .search-pet div {
-    border: 1px solid black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: max-content;
-    padding: 5px;
-    margin-top: 10px;
-    background-color: white;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: max-content;
+  padding: 5px;
+  margin: 0 10px;
+  background-color: white;
 }
 
 .search-pet img {
-    width: 20px;
-    height: 20px;
-    margin: 0px 5px;
+  width: 20px;
+  height: 20px;
+  margin: 0px 5px;
+}
+
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f1cac6;
+  margin-top: 10px;
+  border: none;
+}
+
+button{
+    background-color: transparent;
+    border: none;
+}
+
+button:hover{
+    animation: animation 1s 1;
+}
+
+mat-icon{
+    font-size: 35px;
+}
+
+
+.icon-filter{
+    width: 30px;
+    height: 30px;
+    margin-right: 3px;
+}
+
+@keyframes animation {
+  0% {
+    transform: translateY(0);
+  }
+
+  30% {
+    transform: translateY(-3px);
+  }
 }
 
 .search-pet input {
-    width: 300px;
-    height: 30px;
-    border: none;
+  width: 300px;
+  height: 30px;
+  border: none;
 
+}
+
+a {
+  cursor: pointer;
 }
