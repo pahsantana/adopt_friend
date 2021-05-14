@@ -50,7 +50,7 @@ export class UpdatePetComponent implements OnInit {
 
   deletePet(): void {
     this.dataFormService.delete(`${this.dataForm.id}`).subscribe(() => {
-      this.dataFormService.showMessage('Pet excluído/ adotado com sucesso');
+      this.dataFormService.showMessage('Pet excluído com sucesso');
       this.router.navigate(["/pets"]);
     })
   }

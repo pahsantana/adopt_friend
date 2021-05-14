@@ -31,13 +31,13 @@
       </mat-card-content>
       <div class="buttons">
         <mat-card-actions>
-          <mat-icon class="icons">settings</mat-icon>
+          <mat-icon class="icons" routerLink="/pets/{{pet.id}}">settings</mat-icon>
         </mat-card-actions>
         <mat-card-actions>
           <button mat-button class="button-ver-mais" (click)="VerMais(pet)">Ver mais</button>
         </mat-card-actions>
         <mat-card-actions>
-          <mat-icon class="material-icons-outlined icons " id="close">close</mat-icon>
+          <mat-icon class="material-icons-outlined icons" routerLink="/pets/{{pet.id}}" id="close">close</mat-icon>
         </mat-card-actions>
       </div>
     </mat-card>

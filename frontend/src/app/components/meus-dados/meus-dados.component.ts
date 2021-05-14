@@ -1,10 +1,9 @@
-import { Router } from '@angular/router';
-import { Cadastros } from './../cadastros/cadastros.model';
+import { MeusDados } from './meus-dados.model';
+import { Router, ActivatedRoute } from '@angular/router';
 import { CadastrosService } from './../cadastros/cadastros.service';
 import jwt_decode from 'jwt-decode';
 import { TokenStorageService } from './../../_services/token-storage.service';
 import { Component, OnInit } from '@angular/core';
-import { DataForm } from 'src/app/data-form/data-form.model';
 
 @Component({
   selector: 'app-meus-dados',
@@ -16,10 +15,9 @@ export class MeusDadosComponent implements OnInit {
   isLoggedIn = false;
   currentUser: any;
   decoded: any;
-  cadastros: Cadastros;
+  cadastros: MeusDados;
 
-
-  constructor(private tokenStorage: TokenStorageService, private cadastrosService: CadastrosService, private router: Router) { }
+  constructor(private tokenStorage: TokenStorageService, private cadastrosService: CadastrosService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     if (this.tokenStorage.getToken()) {
@@ -27,11 +25,17 @@ export class MeusDadosComponent implements OnInit {
       this.currentUser = this.tokenStorage.getUser();
       var tokenDec = this.currentUser.token
       this.decoded = jwt_decode(tokenDec);
+      // const id = this.route.snapshot.paramMap.get('id')
+      // this.cadastrosService.readById(id).subscribe(cadastros => {
+      //   this.cadastros = cadastros
+      // });
     }
   }
   updateUser(): void {
     this.cadastrosService.update(this.cadastros).subscribe(() => {
-      this.router.navigate(["/login"])
+      // this.logout();
+      // this.router.navigate(["/login"])
+      this.cadastrosService.showMessage('Usuário alterado com sucesso');
     })
   }
 
@@ -39,7 +43,7 @@ export class MeusDadosComponent implements OnInit {
     this.cadastrosService.delete().subscribe(() => {
       this.logout();
       this.router.navigate(["/"]);
-      this.cadastrosService.showMessage('User excluído com sucesso');
+      this.cadastrosService.showMessage('Usuário excluído com sucesso');
     })
   }
 

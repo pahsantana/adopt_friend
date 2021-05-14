@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { DataFormService } from './../../data-form/data-form.service';
 import { Component, OnInit } from '@angular/core';
 import { DataForm } from 'src/app/data-form/data-form.model';
@@ -11,13 +12,13 @@ import { DataForm } from 'src/app/data-form/data-form.model';
 export class AdocaoComponent implements OnInit {
 
   pet = new DataForm()
-  user: any = { phone: '' , email:''};
-  phone=`tel:${this.user.phone}`
+  user: any = { phone: '', email: '' };
+  phone = `tel:${this.user.phone}`
   whatsapp = `https://api.whatsapp.com/send?phone=${this.user.phone}&text=Ol%C3%A1%2C%20tudo%20bem%3F%20Gostaria%20de%20conhecer%20o%20pet%20anunciado`
-  email=`mailto:${this.user.email}`
+  email = `mailto:${this.user.email}`
 
 
-  constructor(private dataFormService: DataFormService) { }
+  constructor(private dataFormService: DataFormService, private router: Router) { }
 
   ngOnInit(): void {
     this.dataFormService.pet.subscribe(pet => {
@@ -25,6 +26,13 @@ export class AdocaoComponent implements OnInit {
         this.pet = pet;
         this.getUserById(pet.user_id);
       }
+    })
+  }
+
+  deletePet(): void {
+    this.dataFormService.delete(`${this.pet.id}`).subscribe(() => {
+      this.dataFormService.showMessage('Pet adotado com sucesso');
+      this.router.navigate(["/pets"]);
     })
   }
 

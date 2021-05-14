@@ -2,14 +2,16 @@
 
   <div class="title">
 
-    <h1> CADASTRAR UM PET</h1>
+    <h1> CADASTRAR UM USUÁRIO</h1>
     <p>Para cadastrar um pet, precisamos saber um pouco mais de você, pois do ponto de vista do animal, ser abandonado
-    pelo amigo é muito doloroso, e eles já sofreram isso uma vez e não queremos que isso se repita. Eles não merecem ser
-    tratados com desprezo.
-    Sendo assim, abaixo, clique no botão de Cadastro. Ele deverá ser totalmente preenchido e o nome do cão de interesse
-    citado. Após análise, entraremos em contato com você.
-  </p>
-  <h2> Dados do Usuário </h2>
+      pelo amigo é muito doloroso, e eles já sofreram isso uma vez e não queremos que isso se repita. Eles não merecem
+      ser
+      tratados com desprezo.
+      Sendo assim, abaixo, clique no botão de Cadastro. Ele deverá ser totalmente preenchido e o nome do cão de
+      interesse
+      citado. Após análise, entraremos em contato com você.
+    </p>
+    <h2> Dados do Usuário </h2>
   </div>
   <div class="forms">
 
@@ -20,13 +22,13 @@
           <input type="text" [(ngModel)]="cadastros.name" id="nome" name="name"
             placeholder="Digite seu nome completo/Nome Social" size="70" maxlength="50" required>
         </div>
-  
+
         <div class="form-group">
           <label for="cpf">CPF</label>
-          <input type="text" [(ngModel)]="cadastros.cpf" name="cpf" id="cpf" placeholder="Digite aqui o seu cpf" size="70"
-            required>
+          <input type="text" [(ngModel)]="cadastros.cpf" name="cpf" id="cpf" placeholder="Digite aqui o seu cpf"
+            size="70" required>
         </div>
-  
+
         <div class="form-group">
           <label for="email">Email</label>
           <input type="email" [(ngModel)]="cadastros.email" name="email" id="email" placeholder="email@email.com"
@@ -37,7 +39,7 @@
           <input type="tel" [(ngModel)]="cadastros.phone" name="phone" id="telefone" placeholder="Telefone" size="70"
             required>
         </div>
-  
+
         <div class="form-group">
           <label for="password">Senha</label>
           <input type="password" [(ngModel)]="cadastros.password" name="password" placeholder="Digite aqui a sua senha"
@@ -52,6 +54,6 @@
       </div>
     </form>
   </div>
-  
+
 
 </main>

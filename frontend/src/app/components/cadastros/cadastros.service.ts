@@ -1,3 +1,4 @@
+import { MeusDados } from './../meus-dados/meus-dados.model';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -16,9 +17,9 @@ export class CadastrosService {
     return this.http.post<Cadastros>(`${this.baseUrl}/users`, cadastro)
   }
 
-  update(cadastro: Cadastros): Observable<Cadastros> {
+  update(cadastro: MeusDados): Observable<MeusDados> {
     const url = `${this.baseUrl}/users`
-    return this.http.put<Cadastros>(url, cadastro);
+    return this.http.put<MeusDados>(url, cadastro);
   }
 
   delete(): Observable<Cadastros> {
@@ -32,6 +33,11 @@ export class CadastrosService {
       horizontalPosition: "right",
       verticalPosition: "top"
     })
+  }
+
+  readById(id: string): Observable<MeusDados> {
+    const url = `${this.baseUrl}/users/${id}`
+    return this.http.get<MeusDados>(url);
   }
 }
 

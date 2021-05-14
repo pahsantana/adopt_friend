@@ -58,6 +58,7 @@ class UserController {
         const schema = Yup.object().shape({
             name: Yup.string(),
             email: Yup.string().email(),
+            phone: Yup.string(),
             oldPassword:Yup.string().min(6),
             password: Yup.string().min(6).when('oldPassword',(oldPassword,field)=>
                 oldPassword ? field.required() : field
@@ -99,18 +100,24 @@ class UserController {
     }
 
 
-    async delete(req, res){
-        try {
-            const user = await User.findByPk(req.params.id);
-      
-            ({ where: { user_id: req.userId } })
-            await user.destroy();
-      
-            return res.status(200).json({message: `Usuario ${userId} foi deletado`});
-          } catch (err) {
-            return res.status(400).json({ error: err.message });
-          }
-
+    async delete(req, res) {
+        User.destroy({ where: { id: req.userId } })
+            .then(num => {
+                if (num == 1) {
+                    res.send({
+                        message: "Cadastro apagado com sucesso"
+                    });
+                } else {
+                    res.send({
+                        message: "Ocorreu um erro ao apagar este cadastro, verifique se está logado corretamente."
+                    });
+                }
+            })
+            .catch(err => {
+                res.status(500).send({
+                    message: "Erro interno ao apagar o cadastro"
+                })
+            })
     }
 
     async findUserById(req, res) {

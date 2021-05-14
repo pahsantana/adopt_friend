@@ -29,7 +29,7 @@ export const rotas: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'user', component: BoardUserComponent },
   { path: 'adocao', component: AdocaoComponent },
-  { path: 'meus-dados', component: MeusDadosComponent },
+  { path: 'users', component: MeusDadosComponent },
   { path: 'pets/:id', component: UpdatePetComponent },
   { path: '**', component: NotFoundComponent },
 ]

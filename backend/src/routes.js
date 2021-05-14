@@ -19,15 +19,16 @@ routes.post('/users', UserController.store);
 routes.post('/session', SessionController.store);
 routes.use(authMiddleware);
 
-routes.get('/users/pets',PetController.index);
-routes.post('/users/pets', PetController.store);
-routes.get('/pets', PetController.findAllPets);
-
 routes.get('/users', UserController.index);
 routes.put('/users', UserController.update);
 routes.delete('/users', UserController.delete);
 routes.get('/user/:id', UserController.findUserById);
+
 routes.post('/files/pet', upload_pet.single('file'), FileController.store);
+
+routes.get('/users/pets',PetController.index);
+routes.post('/users/pets', PetController.store);
+routes.get('/pets', PetController.findAllPets);
 routes.get('/pets/is_adopted', PetController.findPetByAdopt);
 routes.get('/pets/vaccined', PetController.findPetByVaccine);
 routes.get('/pets/microchiped', PetController.findPetByMicrochip);
