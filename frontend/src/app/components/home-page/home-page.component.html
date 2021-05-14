@@ -8,7 +8,8 @@
           Plataforma que conecta animais em situações de rua com familias disposta a adotá-los. Adotar uma animal é um
           gesto de amor.
         </p>
-        <button type="button" onclick="">Adote já!</button>
+        <button *ngIf="!isLoggedIn" type="button" routerLink="/cadastros" onclick="">Adote já!</button>
+        <button *ngIf="isLoggedIn" type="button" routerLink="/pets" onclick="">Adote já!</button>
       </div>
     </div>
   </section>
@@ -21,7 +22,7 @@
           Liste o nome, idade,<br /> características e informações<br /> sobre seu pet como sexo,<br /> vacinas,porte e
           raças.
         </p>
-        <button type="button" onclick="">Cadastre-se!</button>
+        <button  type="button" routerLink="/cadastros" onclick="">Cadastre-se!</button>
       </div>
     </div>
   </section>

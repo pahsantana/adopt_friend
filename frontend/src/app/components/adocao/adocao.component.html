@@ -5,29 +5,43 @@
     </mat-card-header>
 
     <mat-card-content class="infos">
+
       <img mat-card-image src="{{pet.url}}" alt="Foto do pet {{pet.name}} da raça {{pet.breed}}">
-
-
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-10">
-            <h2>Contatos para Adoção</h2>
-            <dl class="dl-horizontal">
-
-              <dd>Nome do atual dono {{user.name}} </dd>
-
-              <dt>
-
-              </dt>
-              <dd>
-                <a [href]="phone" target="_blank">
+      
+      
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-10">
+              <h2>Contatos para Adoção</h2>
+            
+              <dl class="dl-horizontal">
+                 
+                <dd>Nome do Atual dono: {{user.name}} </dd>
+                
+                <dt>
+                 
+                </dt>
+                <dd> 
+                  <div class="contato">
+                  <mat-icon>phone</mat-icon>
+                  <a [href]="phone" target="_blank">
                   Telefone
                 </a>
-                <a [href]="whatsapp" target="_blank">(WhatsApp)</a>
-              </dd>
-              <a [href]="email" target="_blank">
+                </div>
+                  <div class="container-links contato">
+                    <span><img class="logo" src="../../../assets/img/icones/whatsapp.svg" alt=""></span>
+                    <a id="whatsapp" [href]="whatsapp" target="_blank">(WhatsApp)</a>
+                  </div>
+                  
+                </dd>
+                <div class="contato">
+                  <mat-icon>email</mat-icon>
+                  <a [href]="email" target="_blank">
                 E-mail
               </a>
+
+                </div>
+
             </dl>
           </div>
 
@@ -49,6 +63,11 @@
         </ul>
       </div>
     </mat-card-content>
+    <div class="button">
+      <button class="btn btn-dark btn-block">
+        Adotado
+      </button>
+    </div>
   </mat-card>
 
 
